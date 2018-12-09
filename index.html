@@ -1,21 +1,1646 @@
 <!DOCTYPE html>
-<html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
-  <title>忘我</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
-  <!-- Import lsloader -->
-  <script>!function(){var e="http://"+location.host+"/combo?combo=";window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}},lsloader.removeLS=function(e){try{localStorage.removeItem(e)}catch(e){}},lsloader.setLS=function(e,t){try{localStorage.setItem(e,t)}catch(e){}},lsloader.getLS=function(e){var t="";try{t=localStorage.getItem(e)}catch(e){t=""}return t},lsloader.load=function(e,t,s){s=s||function(){};var n;if(n=this.getLS(e),!/\/\*codestartv1\*\//.test(n))return this.removeLS(e),void this.requestResource(e,t,s);if(n){var a=n.split("/*codestartv1*/")[0];if(a!=t)return console.log("reload:"+t),this.removeLS(e),void this.requestResource(e,t,s);n=n.split("/*codestartv1*/")[1],/\.js?.+$/.test(a)?(this.jsRunSequence.push({name:e,code:n}),this.runjs(t,e,n)):(document.getElementById(e).appendChild(document.createTextNode(n)),s())}else this.requestResource(e,t,s)},lsloader.requestResource=function(e,t,s){var n=this;/\.js?.+$/.test(t)?this.iojs(t,e,function(e,t,s){n.setLS(t,e+"/*codestartv1*/"+s),n.runjs(e,t,s)}):/\.css?.+$/.test(t)&&this.iocss(t,e,function(s){document.getElementById(e).appendChild(document.createTextNode(s)),n.setLS(e,t+"/*codestartv1*/"+s)},s)},lsloader.iojs=function(e,t,s){var n=this;n.jsRunSequence.push({name:t,code:""});try{var a=new XMLHttpRequest;a.open("get",e,!0),a.onreadystatechange=function(){if(4==a.readyState){if((a.status>=200&&a.status<300||304==a.status)&&""!=a.response)return void s(e,t,a.response);n.jsfallback(e,t)}},a.send(null)}catch(s){n.jsfallback(e,t)}},lsloader.iocss=function(e,t,s,n){var a=this;try{var u=new XMLHttpRequest;u.open("get",e,!0),u.onreadystatechange=function(){if(4==u.readyState){if((u.status>=200&&u.status<300||304==u.status)&&""!=u.response)return s(u.response),void n();a.cssfallback(e,t,n)}},u.send(null)}catch(s){a.cssfallback(e,t,n)}},lsloader.iofonts=function(e,t,s,n){var a=this;try{var u=new XMLHttpRequest;u.open("get",e,!0),u.onreadystatechange=function(){if(4==u.readyState){if((u.status>=200&&u.status<300||304==u.status)&&""!=u.response)return s(u.response),void n();a.cssfallback(e,t,n)}},u.send(null)}catch(s){a.cssfallback(e,t,n)}},lsloader.runjs=function(e,t,s){if(t&&s)for(var n in this.jsRunSequence)this.jsRunSequence[n].name==t&&(this.jsRunSequence[n].code=s);if(this.jsRunSequence[0]&&this.jsRunSequence[0].code&&"failed"!=this.jsRunSequence[0].status){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code)),a.type="text/javascript",document.getElementsByTagName("head")[0].appendChild(a),this.jsRunSequence.shift(),this.jsRunSequence.length>0&&this.runjs()}else if(this.jsRunSequence[0]&&"failed"==this.jsRunSequence[0].status){var u=this,a=document.createElement("script");a.src=this.jsRunSequence[0].path,a.type="text/javascript",this.jsRunSequence[0].status="loading",a.onload=function(){u.jsRunSequence.shift(),u.jsRunSequence.length>0&&u.runjs()},document.body.appendChild(a)}},lsloader.tagLoad=function(e,t){this.jsRunSequence.push({name:t,code:"",path:e,status:"failed"}),this.runjs()},lsloader.jsfallback=function(e,t){if(!this.jsnamemap[t]){this.jsnamemap[t]=t;for(var s in this.jsRunSequence)this.jsRunSequence[s].name==t&&(this.jsRunSequence[s].code="",this.jsRunSequence[s].status="failed",this.jsRunSequence[s].path=e);this.runjs()}},lsloader.cssfallback=function(e,t,s){if(!this.cssnamemap[t]){this.cssnamemap[t]=1;var n=document.createElement("link");n.type="text/css",n.href=e,n.rel="stylesheet",n.onload=n.onerror=s;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a)}},lsloader.runInlineScript=function(e,t){var s=document.getElementById(t).innerText;this.jsRunSequence.push({name:e,code:s}),this.runjs()},lsloader.loadCombo=function(t){var s="",n={};for(var a in t){var u=this.getLS(t[a].name);if(u)var o=u.split("/*codestartv1*/")[0],c=u.split("/*codestartv1*/")[1];else var o="";o==t[a].path?this.jsRunSequence.push({name:t[a].name,code:c,path:t[a].path}):(this.jsRunSequence.push({name:t[a].name,code:null,path:t[a].path,status:"comboloading"}),n[t[a].name]=!0,s+=(""==s?"":";")+t[a].path)}var i=this;if(s){var r=new XMLHttpRequest;r.open("get",e+s,!0),r.onreadystatechange=function(){if(4==r.readyState)if(r.status>=200&&r.status<300||304==r.status){if(""!=r.response)return void i.runCombo(r.response,n)}else{for(var e in i.jsRunSequence)n[i.jsRunSequence[e].name]&&(i.jsRunSequence[e].status="failed");i.runjs()}},r.send(null)}this.runjs()},lsloader.runCombo=function(e,t){e=e.split("/*combojs*/"),e.shift();for(var s in this.jsRunSequence)t[this.jsRunSequence[s].name]&&e[0]&&(this.jsRunSequence[s].status="comboJS",this.jsRunSequence[s].code=e[0],this.setLS(this.jsRunSequence[s].name,this.jsRunSequence[s].path+"/*codestartv1*/"+e[0]),e.shift());this.runjs()}}();</script>
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="不在梅边在柳边，忘了时间忘了我。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="忘我">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="忘我">
+<meta property="og:description" content="不在梅边在柳边，忘了时间忘了我。">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="忘我">
+<meta name="twitter:description" content="不在梅边在柳边，忘了时间忘了我。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/">
+
+
+
+
+
+  <title>忘我</title>
+  
+
+
+
+
+
+
+
+
 </head>
-<body>
-  <div id="app"></div>
-  <script type="text/javascript">
-    window.rootUrl = "/"
-    window.one = {"site":{"title":"忘我","subtitle":"Search for the real things in the world","description":"不在梅边在柳边，忘了时间忘了我。","author":"不羁的老表哥","language":"zh-Hans","timezone":null,"url":"http://yoursite.com","root":"/","permalink":":year/:month/:day/:title/","permalink_defaults":null,"source_dir":"source","public_dir":"public","tag_dir":"tags","archive_dir":"archives","category_dir":"categories","code_dir":"downloads/code","i18n_dir":":lang","skip_render":null,"new_post_name":":title.md","default_layout":"post","titlecase":false,"external_link":true,"filename_case":0,"render_drafts":false,"post_asset_folder":false,"relative_link":false,"future":true,"highlight":{"enable":true,"auto_detect":false,"line_number":true,"tab_replace":null,"first_line_number":"always1"},"default_category":"uncategorized","category_map":null,"tag_map":null,"date_format":"YYYY-MM-DD","time_format":"HH:mm:ss","per_page":10,"pagination_dir":"page","theme":"hexo","deploy":{"type":"git","repository":"ssh://git@github.com/bjdlbg/bjdlbg.github.io.git","branch":"master"},"ignore":[],"keywords":null,"index_generator":{"per_page":10,"order_by":"-date","path":""},"canvas_nest":"ture","category_generator":{"per_page":10},"archive_generator":{"per_page":10,"yearly":true,"monthly":true,"daily":false},"tag_generator":{"per_page":10},"marked":{"gfm":true,"pedantic":false,"sanitize":false,"tables":true,"breaks":true,"smartLists":true,"smartypants":true,"modifyAnchors":"","autolink":true},"server":{"port":4000,"log":false,"compress":false,"header":true}},"theme":{"title":"忘我","subtitle":"Search for the real things in the world","description":"不在梅边在柳边，忘了时间忘了我。","author":"不羁的老表哥","language":"zh-Hans","timezone":null,"url":"http://yoursite.com","root":"/","permalink":":year/:month/:day/:title/","permalink_defaults":null,"source_dir":"source","public_dir":"public","tag_dir":"tags","archive_dir":"archives","category_dir":"categories","code_dir":"downloads/code","i18n_dir":":lang","skip_render":null,"new_post_name":":title.md","default_layout":"post","titlecase":false,"external_link":true,"filename_case":0,"render_drafts":false,"post_asset_folder":false,"relative_link":false,"future":true,"highlight":{"enable":true,"auto_detect":false,"line_number":true,"tab_replace":null,"first_line_number":"always1"},"default_category":"uncategorized","category_map":null,"tag_map":null,"date_format":"YYYY-MM-DD","time_format":"HH:mm:ss","per_page":10,"pagination_dir":"page","theme":"hexo","deploy":{"type":"git","repository":"ssh://git@github.com/bjdlbg/bjdlbg.github.io.git","branch":"master"},"ignore":[],"keywords":null,"index_generator":{"per_page":10,"order_by":"-date","path":""},"canvas_nest":"ture","category_generator":{"per_page":10},"archive_generator":{"per_page":10,"yearly":true,"monthly":true,"daily":false},"tag_generator":{"per_page":10},"marked":{"gfm":true,"pedantic":false,"sanitize":false,"tables":true,"breaks":true,"smartLists":true,"smartypants":true,"modifyAnchors":"","autolink":true},"server":{"port":4000,"log":false,"compress":false,"header":true},"head":{"favicon":"https://q1.qlogo.cn/headimg_dl?bs=1106996185&dst_uin=1106996185&spec=100&url_enc=0&referer=bu_interface&term_type=PC"},"img":{"avatar":["/img/lihong.jpg"],"left_pic":["/img/ghost.jpg"],"right_pic":["/img/sakura.jpg"],"post_thumbnail":["/img/air.jpg","/img/afternoon.jpg","/img/sheep.jpg","/img/chair.jpg"],"drawerHeaderBg":["/img/desk.jpg"]},"uiux":{"slogan":"Search for the real things in the world","defaultPrimaryColor":"purple","defaultAccentColor":"red"},"comment":{"disqus":{"shortName":"xxx"}},"Drawer":[{"title":"首页","type":"sitelink","href":"/","icon":"home"},{"title":"hr","type":"hr"},{"title":"关于我","type":"page","name":"关于我","icon":"account_circle"},{"title":"搜索","type":"sitelink","href":"/search/","icon":"search"},{"title":"联系我","icon":"contact_phone","nested":[{"title":"Email","type":"link","href":null,"icon":"mail_outline"},{"title":"Github","type":"link","href":"https://github.com/bjdlbg","icon":{"type":"svg","date":"<path d=\"M941.714 512q0 143.433-83.712 258.011t-216.283 158.574q-15.433 2.853-22.565-3.986t-7.131-17.152v-120.576q0-55.442-29.696-81.152 32.585-3.438 58.587-10.277t53.723-22.272 46.299-37.998 30.281-60.014 11.703-86.016q0-69.157-45.129-117.723 21.138-52.005-4.571-116.553-16.018-5.157-46.299 6.29t-52.553 25.161l-21.723 13.714q-53.138-14.848-109.714-14.848t-109.714 14.848q-9.143-6.29-24.283-15.433t-47.726-22.016-49.152-7.717q-25.161 64.585-3.986 116.553-45.129 48.567-45.129 117.723 0 48.567 11.703 85.723t29.989 60.014 46.007 38.29 53.723 22.272 58.587 10.277q-22.857 20.553-28.014 58.843-11.995 5.705-25.71 8.558t-32.585 2.853-37.413-12.288-31.707-35.73q-10.862-18.286-27.721-29.696t-28.27-13.714l-11.447-1.719q-11.995 0-16.567 2.56t-2.853 6.583 5.157 8.009 7.424 6.839l3.986 2.853q12.581 5.705 24.869 21.723t17.993 29.147l5.705 13.129q7.424 21.723 25.161 35.145t38.29 17.152 39.717 3.986 31.707-2.011l13.129-2.304q0 21.723 0.293 50.871t0.293 30.866q0 10.277-7.424 17.152t-22.857 3.986q-132.571-43.995-216.283-158.574t-83.712-258.011q0-119.442 58.843-220.27t159.707-159.707 220.27-58.843 220.27 58.843 159.707 159.707 58.843 220.27z\" p-id=\"997\"></path>","viewBox":"0 0 1024 1024"}},{"title":"QQ","type":"link","href":null,"icon":{"type":"svg","style":{"height":"20px","width":"20px","margin":"14px"},"date":"<path d=\"M971.464704 668.658688 968.998912 651.020288 965.843968 633.814016 963.337216 624.9728 960.917504 615.569408 957.71648 606.598144 954.430464 596.612096 950.668288 587.208704 946.562048 577.545216 939.254784 561.765376 932.769792 547.8656 926.285824 535.437312 920.62208 523.848704 914.138112 513.301504 909.382656 503.616512 899.309568 489.15456 886.64064 469.894144 883.70176 465.138688 882.707456 463.107072 882.707456 461.50656 884.825088 455.000064 887.763968 449.207296 890.314752 437.772288 891.742208 431.869952 891.742208 425.77408 892.478464 420.867072 892.478464 415.93856 891.742208 410.27584 890.92096 405.649408 889.061376 396.26752 886.64064 387.145728 884.435968 378.779648 880.97792 370.651136 877.08672 363.864064 874.015744 357.487616 870.601728 351.413248 865.240064 342.463488 863.25248 339.28704 862.646272 336.520192 860.182528 319.161344 858.58304 307.725312 856.767488 293.567488 853.957632 278.93248 849.547264 262.158336 847.040512 252.754944 845.049856 244.799488 842.284032 235.547648 839.171072 225.712128 836.058112 216.590336 832.079872 206.77632 823.953408 187.817984 819.15392 178.84672 813.359104 168.557568 807.913472 159.73888 802.465792 149.751808 794.769408 140.498944 788.286464 131.52768 780.374016 122.27584 772.332544 113.88928 764.203008 105.783296 754.562048 97.373184 749.504512 94.348288 744.706048 90.153984 734.329856 82.783232 722.312192 74.806272 710.032384 67.586048 697.365504 61.079552 683.531264 55.135232 670.560256 49.492992 657.027072 44.56448 642.24256 40.521728 628.7104 36.912128 614.31296 33.75616 600.694784 30.427136 585.996288 28.827648 571.597824 27.076608 557.246464 25.19552 542.416896 25.19552 528.106496 25.19552 514.271232 25.19552 499.70176 26.039296 486.040576 27.940864 472.421376 29.821952 458.587136 32.135168 444.88192 34.750464 431.911936 37.927936 418.941952 42.121216 406.880256 46.31552 394.81856 50.357248 382.712832 56.301568 371.299328 61.079552 361.182208 66.873344 350.63296 73.37984 340.90496 80.167936 331.308032 87.819264 323.396608 94.930944 310.9888 106.626048 300.698624 117.49888 290.8416 128.048128 281.8048 138.770432 273.332224 149.751808 265.895936 160.451584 258.676736 171.15136 255.304704 175.929344 252.191744 181.722112 245.446656 191.860736 240.086016 201.977856 235.33056 211.530752 231.179264 221.648896 227.115008 230.899712 223.742976 239.5904 220.63104 248.841216 217.474048 257.380352 213.279744 272.858112 210.210816 287.753216 208.525312 300.203008 206.795776 310.925312 206.795776 319.161344 206.795776 325.818368 206.795776 331.741184 203.855872 334.941184 201.17504 339.28704 199.057408 343.177216 197.240832 347.370496 194.950144 356.493312 192.442368 364.880896 191.62112 372.381696 191.058944 377.893888 191.058944 383.816704 185.265152 392.225792 181.157888 400.613376 178.045952 408.697856 175.75424 415.93856 173.98272 422.878208 172.296192 429.405184 172.296192 434.875392 172.296192 440.971264 172.296192 446.0288 173.290496 450.071552 174.716928 457.464832 176.489472 463.107072 173.290496 465.570816 164.210688 472.358912 152.236032 483.339264 144.88576 489.846784 137.709568 496.223232 132.781056 501.303296 128.7168 505.778176 119.983104 515.180544 111.68256 524.583936 105.197568 532.690944 97.415168 544.407552 89.979904 554.954752 82.629632 566.693888 76.447744 577.545216 71.303168 589.089792 65.855488 599.810048 61.877248 610.36032 57.683968 621.362176 54.571008 632.061952 51.501056 643.064832 48.77824 652.619776 47.263744 662.888448 45.57824 672.421888 44.150784 681.695232 43.287552 699.766784 43.287552 716.540928 43.287552 724.063232 44.150784 731.456512 46.44352 744.0384 47.263744 749.572096 48.77824 755.190784 50.6368 760.510464 52.366336 764.269568 55.133184 771.23072 57.25184 772.658176 58.548224 775.597056 60.191744 776.288256 61.186048 776.288256 61.877248 776.288256 69.097472 775.597056 76.447744 773.696512 82.629632 771.23072 89.114624 767.03744 95.03744 763.14624 100.39808 758.044672 106.191872 752.72704 111.077376 747.235328 115.745792 741.010432 119.983104 735.388672 123.961344 730.722304 126.425088 725.36064 131.267584 716.540928 132.781056 712.930304 133.645312 710.769664 134.076416 708.304896 135.201792 706.27328 136.066048 705.841152 137.709568 704.974848 138.74688 704.974848 139.179008 705.841152 140.000256 705.841152 140.822528 706.27328 143.545344 718.270464 146.485248 727.955456 150.419456 738.11456 154.396672 747.235328 157.72672 756.31616 162.871296 764.269568 166.631424 772.658176 170.86976 780.352512 175.75424 787.009536 179.472384 793.409536 189.329408 805.254144 197.933056 815.804416 206.2336 824.018944 214.40512 831.412224 221.495296 837.204992 232.044544 846.58688 236.281856 848.661504 237.707264 850.650112 237.707264 851.644416 236.713984 852.552704 236.281856 852.552704 234.1632 853.244928 226.250752 853.850112 218.901504 854.844416 212.718592 855.709696 206.2336 857.135104 200.569856 858.907648 194.950144 860.637184 190.021632 863.275008 186.131456 865.696768 181.157888 867.296256 178.045952 869.890048 174.716928 871.921664 171.127808 874.816512 166.631424 880.438272 164.94592 883.076096 162.871296 885.366784 160.017408 891.290624 158.461952 896.22016 156.601344 901.146624 156.212224 905.470976 156.212224 911.133696 156.212224 913.598464 155.390976 917.618688 155.390976 921.726976 154.396672 925.7472 154.396672 929.33632 155.390976 933.269504 156.212224 936.77056 158.461952 943.516672 160.017408 946.715648 162.006016 949.9136 164.210688 953.069568 166.631424 955.838464 169.875456 958.993408 172.296192 961.5872 179.472384 966.948864 186.692608 971.444224 194.950144 975.50848 203.855872 979.139584 213.279744 983.02976 223.742976 985.452544 234.1632 988.9536 245.446656 991.289344 256.688128 992.974848 268.273664 994.748416 280.249344 996.477952 303.855616 998.940672 328.195072 999.3728 350.63296 999.3728 361.182208 999.3728 371.299328 999.3728 381.847552 998.940672 390.884352 997.905408 399.617024 997.213184 407.788544 996.477952 420.931584 993.883136 430.398464 991.289344 439.392256 988.9536 455.993344 981.994496 463.516672 979.139584 470.69184 975.50848 482.53952 968.85248 493.216768 963.489792 501.129216 958.43328 506.921984 953.069568 515.95776 954.063872 522.96192 954.843136 536.79616 955.838464 543.281152 955.838464 548.770816 955.838464 552.96512 956.70272 557.246464 958.43328 564.033536 960.893952 571.597824 963.489792 585.996288 967.986176 600.694784 973.345792 615.005184 977.496064 629.445632 980.438016 644.187136 984.155136 659.448832 986.359808 673.931264 987.959296 688.458752 989.990912 702.03392 991.289344 716.560384 992.108544 730.481664 992.108544 744.013824 992.108544 756.854784 992.108544 769.823744 990.554112 782.534656 989.990912 794.769408 987.959296 806.052864 985.452544 817.337344 983.02976 828.147712 980.438016 832.641024 979.139584 837.6576 977.496064 847.040512 973.778944 855.384064 969.887744 863.25248 965.823488 870.601728 961.5872 877.08672 956.70272 879.637504 954.063872 882.707456 950.4768 886.64064 945.677312 890.92096 939.754496 892.478464 936.77056 893.169664 934.264832 894.984192 931.064832 895.676416 927.60576 895.676416 924.275712 896.54272 920.947712 895.676416 916.063232 894.984192 911.868928 893.169664 906.940416 891.742208 902.87616 889.061376 897.946624 885.820416 893.452288 882.707456 889.561088 878.513152 886.275072 869.866496 878.751744 860.182528 871.488512 850.41152 865.696768 840.121344 859.772928 816.603136 848.186368 810.9824 844.727296 809.426944 843.127808 808.430592 842.090496 819.759104 830.675968 824.644608 825.056256 828.70784 819.867648 836.619264 808.411136 844.09856 796.694528 850.41152 786.275328 856.377344 776.288256 864.375808 756.31616 870.601728 739.714048 874.707968 727.955456 877.08672 724.063232 878.513152 720.907264 880.97792 719.004672 882.015232 719.004672 882.707456 719.438848 888.759296 731.456512 894.163968 743.042048 897.968128 749.572096 901.901312 755.190784 905.793536 762.107904 910.808064 768.941056 915.001344 773.696512 917.552128 776.288256 920.059904 778.625024 922.351616 780.352512 924.557312 781.953024 929.398784 784.417792 931.90656 785.282048 933.593088 785.282048 935.839744 785.282048 938.391552 784.417792 941.548544 782.81728 945.050624 781.216768 947.945472 778.625024 950.668288 775.597056 953.73824 771.835904 956.158976 768.941056 958.88384 764.269568 960.917504 760.510464 963.337216 755.190784 964.6336 750.695424 968.136704 739.714048 970.426368 727.565312 972.068864 714.097664 973.193216 706.27328 973.193216 699.766784 973.193216 692.805632 973.193216 684.288Z\" p-id=\"996\"></path>","viewBox":"0 0 1024 1024"}}]},{"title":"Indox","initiallyOpen":true,"icon":"inbox","nested":[{"title":"Starred","type":"link","href":"https://www.baidu.com/","icon":"search"}]}],"colorPicker":true,"homeToolBar":[{"icon":"more_vert","items":[{"title":"RSS","type":"link","href":"/atom.xml","icon":"rss_feed"}]}],"footer":["Copyright © 2016 - 2017 EYHN",["永远的第一天。","永远的第一天。"]],"live2d":{"enable":true,"scriptFrom":"local","pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"use":"live2d-widget-model-wanko"},"display":{"position":"right","width":50,"height":100},"mobile":{"show":false}}}}
-  </script>
-  <script>lsloader.load("vendor.js","/vendor.js")</script>
-  <script>lsloader.load("bundle.js","/bundle.js")</script>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">忘我</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Search for the real things in the world</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/07/Android-MoPub广告的集成（2）/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="不羁的老表哥">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="忘我">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/07/Android-MoPub广告的集成（2）/" itemprop="url">Android-MoPub广告的集成（2）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-07T16:09:57+08:00">
+                2018-12-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Android集成第三方依赖库"><a href="#Android集成第三方依赖库" class="headerlink" title="Android集成第三方依赖库"></a>Android集成第三方依赖库</h2><p>在此之前，首先先来总结一下Android集成三方依赖库的方式Android也是基于java，所以大体上的集成第三方jar代码包跟java一个道理。</p>
+<ol>
+<li>首先是最方便的一种方式Jcenter或者maven方式。官方都会提供这两种的脚本语句，只需在app项目中添加即可（可以自行了解相关内容）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">//依赖的来源</span><br><span class="line"> repositories &#123;</span><br><span class="line">        jcenter()</span><br><span class="line">        flatDir &#123;</span><br><span class="line">            dirs &apos;libs&apos;</span><br><span class="line">        &#125;</span><br><span class="line">        maven &#123; url &quot;https://s3.amazonaws.com/moat-sdk-builds&quot; &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">dependencies &#123;</span><br><span class="line">    compile fileTree(include: [&apos;*.jar&apos;], dir: &apos;libs&apos;)</span><br><span class="line">    compile &apos;com.android.support:design:27.1.1&apos;</span><br><span class="line">    compile &apos;com.android.support:appcompat-v7:27.1.1&apos;</span><br><span class="line"></span><br><span class="line">    //在此处添加需要的依赖即可</span><br><span class="line">    compile project(&apos;:mopub-sdk-banner&apos;)</span><br><span class="line">//注：高版本的gradle语言compile已经过时（2018年底将会废弃），使用implementation或者api来代替。</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>不管什么样的api或者依赖库官方一般都会提供这种方式，只需参考官方文档即可。</p>
+<ol start="2">
+<li><p>如果需要导入的是第三方的jar代码包，那么只需在Android项目中的libs（也可以是你自己命名的其他文件夹中）中，放入你需要的jar包。之后在项目中module的build.gradle文件中添加如下语句</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//XXX为java包的名字</span><br><span class="line">compile files(&apos;libs/XXX.jar&apos;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>或者在Android studio中的模块配置中手动添加依赖包也可以，点击Android studio左上角File-&gt;Project  Structure，找到找到对应的项目后，就可以看到项目的基本配置信息，然后选择dependencies，点击左上角的绿色+选择要添加的依赖，有三种依赖方式可供选择（Library/jar/model）选择下载好的依赖包即可。</p>
+</li>
+</ol>
+<h4 id="其次是第三方Android项目的sdk-项目依赖"><a href="#其次是第三方Android项目的sdk-项目依赖" class="headerlink" title="其次是第三方Android项目的sdk 项目依赖"></a>其次是第三方Android项目的sdk 项目依赖</h4><p>如果说需要导入的不是纯粹的jar代码包，而是一个功能模块（module）。这时有两种方式可以选择，</p>
+<ol>
+<li><p>一是修改sdk中gradle文件的配置信息主要是buildtoolsversion，以及使用到的一些v4，v7包的版本需要跟主体项目保持一致，其中的一些没用可以删去（dependencies中的一些依赖等），之后在app的setting.gradle中include后添加该sdk</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//app的setting.gradle中</span><br><span class="line">include &apos;:app&apos;, &apos;:mopub-sdk:mopub-sdk-banner&apos;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>另外一种是自己新建一个Android Library，项目上右键new →  module（注意） ，将创建好的module中的src下的文件全部删除，将下载的sdk中对应的src文件夹中的东西复制过去，其他的也对应复制即可。<br>之后在gradle文件中添加依赖。</p>
+<h2 id="Android集成Mopub"><a href="#Android集成Mopub" class="headerlink" title="Android集成Mopub"></a>Android集成Mopub</h2><p>先给出官方文档：<br><a href="https://developers.mopub.com/docs/android/getting-started/" target="_blank" rel="noopener">https://developers.mopub.com/docs/android/getting-started/</a><br>大致步骤按照官网来就行。各种广告模式也参考官方文档来即可。<br>在升级项目中的广告sdk时候由于版本太旧所以踩了不少坑。再次总结一下：</p>
+</li>
+</ol>
+<ul>
+<li><p>由于使用方法推荐的方法时候（jcenter上获取）其中有一个文件需要科学上网，而远程git上面跑测试时候的环境恰恰没有外网所以测试一直是build失败，所以这种方式无法使用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//就是因为引用的这个网址无法访问</span><br><span class="line">maven &#123; url &quot;https://s3.amazonaws.com/moat-sdk-builds&quot; &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>所以采用module的方式集成，又因为项目中的gradle版本使用的是很旧的一个版本，而官方给出的新版本sdk模块是使用的新版本gradle，直接丢进去有很多地方不兼容。所以要修改grade版本成一致，一是升级项目中的gradle（我这个项目比较大根目录涉及多个app，很难搞，所以放弃这个方法）二是修改第三方module中的gradle</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">api 以及 implementation    需要使用   compile  来代替 （gradle3.1之前都需要）</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">错误：google() 找不到</span><br><span class="line">解决方法：将gradle中的google（）修改为</span><br><span class="line">    maven &#123;</span><br><span class="line">        url &apos;https://maven.google.com/&apos;</span><br><span class="line">        name &apos;Google&apos;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">......</span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>总之期间是遇到了不少的困难，但是只要是遇到了问题那就一定有他的原因，遇到的并不是什么怪异现象，在网上搜总会有答案的，多利用google，并且大部分问题都可以在stackoverflow上面找到答案，关键的是要有一颗沉得住的心。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/29/Linux下GTK-环境配置/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="不羁的老表哥">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="忘我">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/29/Linux下GTK-环境配置/" itemprop="url">Linux下GTK+环境配置</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-29T12:09:45+08:00">
+                2018-11-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="1-Linux系统中安装GTK-工具包（基于Ubuntu18-4）"><a href="#1-Linux系统中安装GTK-工具包（基于Ubuntu18-4）" class="headerlink" title="1.Linux系统中安装GTK+工具包（基于Ubuntu18.4）"></a>1.Linux系统中安装GTK+工具包（基于Ubuntu18.4）</h3><ul>
+<li>之前准备工作 sudo apt-get update 对安装源更新   </li>
+<li>第一步确保Linux或者虚拟机中装好了C语言环境（gcc/g++等编译工具）可以使用如下命令 sudo apt-get install build-essential</li>
+<li>第二步安装GTK+3.0 <pre><code>①Linux中使用如下命令 sudo apt-get install libgtk-3-dev 
+②安装项目管理工具 sudo apt-get install pkg-config   
+③（选择安装）GTk帮助文档 sudo apt-get install devhelp 
+</code></pre></li>
+<li>第三步安装后确认<br>   确认pkg版本 pkg-config –version   确认GTK+版本  pkg-config –modversion gtk+-3.0<h3 id="2-安装代码编辑环境-codeblocks"><a href="#2-安装代码编辑环境-codeblocks" class="headerlink" title="2.安装代码编辑环境 codeblocks"></a>2.安装代码编辑环境 codeblocks</h3>  vim编辑器没有代码补全也没有错误提示。这个不多说，况且该IDE可以直接新建GTK+项目；<br>  sudo apt-get install codeblocks<h3 id="3-安装glade3"><a href="#3-安装glade3" class="headerlink" title="3.安装glade3"></a>3.安装glade3</h3>  glade3可以创建图形界面，手动绘制。<br>  将文件保存成GTKbuilder形式（本质是XML文件），在c语言代码中可以直接获取对象。<br>  sudo apt-get install glad<h3 id="4-配置IDE环境变量"><a href="#4-配置IDE环境变量" class="headerlink" title="4.配置IDE环境变量"></a>4.配置IDE环境变量</h3>   进入codeblocks中创建project选择GTK+项目，之后需要配置编译路径，<br>   右键项目 → build options → （compiler 中的other   ，linker中的other）两个地方添加如下语句<br>   <code>pkg-config --libs --cflags gtk+-3.0</code></li>
+</ul>
+<p>由于大作业的要求是做出来一个Linux下的软件，并且要有图形界面，嵌入式的开发，所以在语言方面选择C语言。之后会更新讲解关于glade3画图工具的基本使用方法。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/04/Android-MoPub广告的集成（1）/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="不羁的老表哥">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="忘我">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/04/Android-MoPub广告的集成（1）/" itemprop="url">Android-MoPub广告的集成（1）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-04T17:09:51+08:00">
+                2018-10-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="为何在Android项目中加入广告"><a href="#为何在Android项目中加入广告" class="headerlink" title="为何在Android项目中加入广告"></a>为何在Android项目中加入广告</h2><p>随着手机性能的提升，硬件技术的发展，各种手机软件也是各种各样层出不穷，移动端的广告平台也是有很快的发展。在从前对于手机软件中的广告都是持有一种半讨厌的态度，认为这东西不但没有用而且很烦。<br>但是最近有研究手机中广告的集成，发现其中还是蛮有学问的，也大致上了解手机端广告的这种商业模式。对于开发者来说，对自己的app中通过正规的平台添加一些适当的广告可以给开发者带来一些收益，可以看作是一种激励优秀软件开发的一种推动力。</p>
+<h3 id="国外主流的广告平台"><a href="#国外主流的广告平台" class="headerlink" title="国外主流的广告平台"></a>国外主流的广告平台</h3><p>Facebook、Amazon、AdMob等都是比较规范的广告平台，这次用的是twitter旗下的MoPub广告平台。该平台的特点是你不仅可以使用mopub平台的广告，还可以利用该平台集成其他平台的广告，也就是集成和管理三方广告。</p>
+<h3 id="关于互联网广告的模式"><a href="#关于互联网广告的模式" class="headerlink" title="关于互联网广告的模式"></a>关于互联网广告的模式</h3><blockquote>
+<p>1.CPM（cost per mille）每一千次展现计费<br>开发者在他的app界面展示多少次，展示够一定次数或者被多少用户看到就可以计费一次，这种广告不需要点击进去，只是展示出来即可，说白了就是走流量形式的广告。<br>2.CPC（cost per click）每次点击计费<br>这个顾名思义就是用户点击一次就会给开发者一些费用，cpc模式往往会有一些限制例如广告平台会规定每一个ip在一段时间内只能点击一次，多次点击不予计算，从而降低预算成本。<br>3.CPA（cost per sale）每次动作计费<br>这是一种更复杂的一种模式，它需要用户不仅点击进去，而且还要做一些相关的动作，例如进入页面而且完成一次用户注册，或者是一些其他的交易过程。虽然这样要求比较严但是可想而知费用会给的比前面的要多一些。<br>4.其他<br>常见的是这些还有一些比如可以引导进去一个广告界面收集一些用户的信息，例如一些商家的问卷调查，关注一些公众号获取微信头像和昵称等信息；还有就是一些网络游戏的引导注册界面，例如是兄弟就来玩的某月亮等等。。</p>
+</blockquote>
+<h4 id="app应用内的广告的样式有很多种"><a href="#app应用内的广告的样式有很多种" class="headerlink" title="app应用内的广告的样式有很多种"></a>app应用内的广告的样式有很多种</h4><ul>
+<li>Banner（横幅广告，也是最常见的一种）<br>该广告的形式是在activity中或者fragment中像一个条幅一样挂在界面的上端或者下端。<br><img src="https://upload-images.jianshu.io/upload_images/13139591-cf3bac5f7345c639.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/400" alt="banner.jpg"></li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/13139591-ecdc874db441ab5a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/400" alt="banner2.png"></p>
+<p>这种的往往利润较少，用户点击率也比较小。</p>
+<ul>
+<li>Interstitial（插页广告）<br><img src="https://upload-images.jianshu.io/upload_images/13139591-b5d4398c1a45d30b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/400" alt="interstitial.png"></li>
+</ul>
+<p>这种广告是就像弹出一个页面，页面是广告的内容，用户可以点击进去查看，也可以点击叉号关掉页面。还有就是app加载进去时候会显示的一个界面。这种的是会有一定的互动程度，如果内容设计的不错还是挺容易引起用户兴趣的。</p>
+<ul>
+<li>Native Ad（本地广告，可以集成到列本地表中的广告）<br><img src="https://upload-images.jianshu.io/upload_images/13139591-b30333bb67ed898d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/300" alt="native.png"></li>
+</ul>
+<p>这样的广告十分的灵活，它不跟banner一样是固定在屏幕上下方不会动，也不会占据半个或者整个屏幕，而是像一个item一样嵌入到Listview，Recyclerview中，可以随着app内的信息流上下滑动。最常见的就是刷微信朋友圈，刷微博知乎时混入item中的广告。这样的设计确实非常巧妙，加上一些智能推送算法，给不同的用户推荐不同的广告，大大提高点击率。</p>
+<ul>
+<li>Rewarded Video（通过一些视频来获取利润）<br><img src="https://upload-images.jianshu.io/upload_images/13139591-125cbeb35eb55853.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="video game ads.png"></li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/13139591-a1635072373a228e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="video ads.png"></p>
+<p>这也是一种常见的格式，一些游戏设置一些关卡奖励视频，或者小游戏。还有就是一些视频广告vip可以点击关闭的等等……</p>
+<h3 id="下一篇会讲关于Android-studio-集成mopub-SDK的技术方面的问题"><a href="#下一篇会讲关于Android-studio-集成mopub-SDK的技术方面的问题" class="headerlink" title="下一篇会讲关于Android studio 集成mopub SDK的技术方面的问题"></a>下一篇会讲关于Android studio 集成mopub SDK的技术方面的问题</h3>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/02/Android-NsLookup总结（2）/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="不羁的老表哥">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="忘我">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/02/Android-NsLookup总结（2）/" itemprop="url">Android-NsLookup总结（2）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-02T10:09:39+08:00">
+                2018-09-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>这次较上次的总结中新增了可以copy IP的功能，对文本框中现有的数据进行捕获并且进行处理（将查询信息中的格式解析成回行，让信息一条一条显示出来），只截取信息中的ip然后将其复制到系统剪切板，并且可以调用浏览器进行直接访问。</p>
+<h3 id="对查询信息中的文字处理"><a href="#对查询信息中的文字处理" class="headerlink" title="对查询信息中的文字处理"></a>对查询信息中的文字处理</h3><p>原本的信息中格式中有大量无用空格，这里将空格替换为回车<br>在上篇主函数showDnsIp（）中对return的ip进行处理，把一个以上的空格全部替换为“\n”回车<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//将查询结果中的空格替换为回行</span><br><span class="line">          ip = rec.toString().replaceAll(&quot;\\s+&quot;,&quot;\n&quot;);</span><br></pre></td></tr></table></figure></p>
+<p>格式如下图<br><img src="https://upload-images.jianshu.io/upload_images/13139591-c36aee5ec35bf603.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="ns-msg-type.png"><br>当点击copy按钮时，会弹出dialog</p>
+<h3 id="copy-ip的对话框"><a href="#copy-ip的对话框" class="headerlink" title="copy ip的对话框"></a>copy ip的对话框</h3><p><img src="https://upload-images.jianshu.io/upload_images/13139591-ea06deea304ff126.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="copy_ip_dialog.png"><br>捕获字符串中的=ip并且将ip回传，因为用的java包中的函数查询出的格式为域名+端口号+in+查询类型+ip地址所以用数组可以把ip取出来。<br>用‘\n’把字符串切割成字符串数组可以把ip取出来，对应的其他错误格式则用字幕显示no ip fond。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 处理查询结果</span><br><span class="line"> * 获取字符串中ip</span><br><span class="line"> */</span><br><span class="line">public String copyIp(String address)&#123;</span><br><span class="line">    String [] ip;</span><br><span class="line">    String errorIp=&quot;Error：&quot;;</span><br><span class="line">    String nullIP=&quot;Please enter domain name&quot;;</span><br><span class="line">    //利用数组取出查询结果中的ip，回传ip，没有ip则回传空字符</span><br><span class="line">    if (address.contains(errorIp)||address.equals(&quot;&quot;)||address.equals(nullIP))&#123;</span><br><span class="line">        ip= new String[]&#123;&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;&#125;;</span><br><span class="line">    &#125;else &#123;</span><br><span class="line">        ip=address.split(&quot;\n&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    //格式：ip[0]域名,ip[1]端口号,ip[3]查询类型,ip[4]ip地址</span><br><span class="line">    return ip[4];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>dialog的显示<br>设置好dialog的标题和内容，点击ok可以去粘贴，点击Open this url则调用默认的浏览器将ip打开。<br>其中访问浏览器需要用到intent，这里可以拓展为用户选定浏览器。记住dialog需要跟Toast一样最后要用.crate()和.show()将dialog显示<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">    *显示ip复制的dialog</span><br><span class="line">    */</span><br><span class="line">   public void showIpDialog(String mIp)&#123;</span><br><span class="line"></span><br><span class="line">       AlertDialog.Builder mDialog=new AlertDialog.Builder(mAllActivity);</span><br><span class="line">       mDialog.setMessage(&quot;You&apos;ve copied this IP:\n&quot;+&quot;\t&quot;+mIp);</span><br><span class="line">       mDialog.setTitle(R.string.nslookup_dialog_title);</span><br><span class="line">       //点击ok关闭对话框</span><br><span class="line">       mDialog.setPositiveButton(&quot;ok&quot;, new DialogInterface.OnClickListener() &#123;</span><br><span class="line">           @Override</span><br><span class="line">           public void onClick(DialogInterface dialog, int which) &#123;</span><br><span class="line">               dialog.cancel();</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;);</span><br><span class="line">       //点击左边按钮访问ip</span><br><span class="line">       mDialog.setNegativeButton(&quot;Open this url&quot;, new DialogInterface.OnClickListener() &#123;</span><br><span class="line">           @Override</span><br><span class="line">           public void onClick(DialogInterface dialog, int which) &#123;</span><br><span class="line">               //访问复制到的ip</span><br><span class="line">               Intent localIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(&quot;http://&quot; + mIp));</span><br><span class="line">               mAllActivity.startActivity(localIntent);</span><br><span class="line">               dialog.cancel();</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;);</span><br><span class="line">       mDialog.create();</span><br><span class="line">       mDialog.show();</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="点击按钮时copy-Ip，并且弹出dialog"><a href="#点击按钮时copy-Ip，并且弹出dialog" class="headerlink" title="点击按钮时copy Ip，并且弹出dialog"></a>点击按钮时copy Ip，并且弹出dialog</h3><p>首先判断接到的信息是什么，若是字符串则显示字幕no ip fond，不是则将ip复制到剪切板并且创建dialog。<br>获取系统剪切板则需要使用到ClipboardManager剪切板管理器，用的时候创建对象并且赋值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">mCopyButton.setOnClickListener(new View.OnClickListener() &#123;</span><br><span class="line">           /**</span><br><span class="line">            * 点击按钮复制ip</span><br><span class="line">            * @param v</span><br><span class="line">            */</span><br><span class="line">           @Override</span><br><span class="line">           public void onClick(View v) &#123;</span><br><span class="line">               //复制ip并且显示复制ip的dialog</span><br><span class="line">               String ip=copyIp(mTextView.getText().toString());</span><br><span class="line">               if (ip.equals(&quot;&quot;))&#123;</span><br><span class="line">                   Toast.makeText(mServerMonitor,R.string.nslookup_toast_msg,Toast.LENGTH_SHORT).show();</span><br><span class="line">               &#125;else &#123;</span><br><span class="line">                   //获取到剪贴板管理器</span><br><span class="line">                   ClipboardManager mClipboardManager=(ClipboardManager)mAllActivity.</span><br><span class="line">                           getSystemService(Context.CLIPBOARD_SERVICE);</span><br><span class="line">                   //创建普通字符型ClipData</span><br><span class="line">                   ClipData mClipData=ClipData.newPlainText(&quot;Lable&quot;,ip);</span><br><span class="line">                   //放到系统剪切板</span><br><span class="line">                   mClipboardManager.setPrimaryClip(mClipData);</span><br><span class="line">                   showIpDialog(ip);</span><br><span class="line">               &#125;</span><br><span class="line">               Log.d(&quot;---复制信息---&quot;+ip);</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;);</span><br></pre></td></tr></table></figure></p>
+<p>这次算是对上次的域名查询功能上面做了一些补充，学习了一下Android中的使用浏览器访问ip和系统剪切板的使用。马上就要开学了，这个学年要学习更多东西，丰富自己努力提升。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/11/Android-NsLookup总结/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="不羁的老表哥">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="忘我">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/11/Android-NsLookup总结/" itemprop="url">Android-NsLookup总结</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-11T10:30:24+08:00">
+                2018-08-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>这一段时间在给项目新增一个NsLookup功能并且学习了一些东西，已经有两周没有写博客了，正好有时间来做个总结。<br>先说一下这个功能：该功能是可以让用户输入一个域名然后显示它 的ip地址，并且在右上角菜单有可以查看历史记录的menu菜单，其中主要用到了一些知识例如网络请求，线程，以及dns等。实现效果和windows控制台输入nslookup+domain name效果差不多。</p>
+<h3 id="域名解析（功能主函数）"><a href="#域名解析（功能主函数）" class="headerlink" title="域名解析（功能主函数）"></a>域名解析（功能主函数）</h3><p>其中用到了该java类import org.xbill.DNS.*</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"> public String showDnsIp(String s)</span><br><span class="line">            throws UnknownHostException, TextParseException &#123;</span><br><span class="line">        String ip=null;</span><br><span class="line">//            String address = InetAddress.getByName(s).getHostAddress();</span><br><span class="line">//            System.out.println(address);</span><br><span class="line"></span><br><span class="line">        //查询类型为A类查询</span><br><span class="line">        Lookup mlookup = new Lookup(s, Type.A);</span><br><span class="line">        mlookup.run();</span><br><span class="line">        //查询失败则返回错误信息</span><br><span class="line">        if (mlookup.getResult() != Lookup.SUCCESSFUL) &#123;</span><br><span class="line">            System.out.println(&quot;ERROR: &quot; + mlookup.getErrorString());</span><br><span class="line">            ip = &quot;Error：&quot; + mlookup.getErrorString();</span><br><span class="line">            return ip;</span><br><span class="line">        &#125;</span><br><span class="line">        //获取结果</span><br><span class="line">        Record[] answers = mlookup.getAnswers();</span><br><span class="line">        for (Record rec : answers) &#123;</span><br><span class="line">            System.out.println(rec.toString());</span><br><span class="line">            ip = rec.toString();</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        return ip;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>该java类对网络的请求以及实现过程可以看源码，而且可以注意到lookup函数中有一个type类型，那就是dns的查询类型。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">nslookup有很多种查询种类如下:</span><br><span class="line">A 地址记录</span><br><span class="line">AAAA 地址记录</span><br><span class="line">AFSDB Andrew文件系统数据库服务器记录</span><br><span class="line">ATMA ATM地址记录</span><br><span class="line">CNAME 别名记录</span><br><span class="line">HINFO 硬件配置记录，包括CPU、操作系统信息</span><br><span class="line">ISDN 域名对应的ISDN号码</span><br><span class="line">MB 存放指定邮箱的服务器</span><br><span class="line">MG 邮件组记录</span><br><span class="line">MINFO 邮件组和邮箱的信息记录</span><br><span class="line">MR 改名的邮箱记录</span><br><span class="line">MX 邮件服务器记录</span><br><span class="line">NS 名字服务器记录</span><br><span class="line">PTR 反向记录</span><br><span class="line">RP 负责人记录</span><br><span class="line">RT 路由穿透记录</span><br><span class="line">SRV TCP服务器信息记录</span><br><span class="line">TXT 域名对应的文本信息</span><br><span class="line">X25 域名对应的X.25地址记录</span><br></pre></td></tr></table></figure></p>
+<p>种类非常的多，但是最常用的还是A类查询</p>
+<h3 id="AsyncTask的使用"><a href="#AsyncTask的使用" class="headerlink" title="AsyncTask的使用"></a>AsyncTask的使用</h3><p>Android中对网络的请求需要把功能函数放到线程中去实现，从而不会导致整个主线程受到影响，可以选择用Android封装的线程类AsyncTask。AsyncTask是Android中的一个抽象类，需要去继承它然后使用，该类可以设置三个泛型参数<br>当我们子类继承一个AsyncTask时，至少要重写一个方法那就是（doInBackground（Params…）需要在线程中完成的事情，同类型参数而且可以传入多个）。通常也会实现这个方法（onPostExecute（Result）将结果返回给主线程，参数可以是doInBackground的返回值）。<br>这是官方给出的源码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">private class DownloadFilesTask extends AsyncTask&lt;URL, Integer, Long&gt; &#123;</span><br><span class="line">     protected Long doInBackground(URL... urls) &#123;</span><br><span class="line">         int count = urls.length;</span><br><span class="line">         long totalSize = 0;</span><br><span class="line">         for (int i = 0; i &lt; count; i++) &#123;</span><br><span class="line">             totalSize += Downloader.downloadFile(urls[i]);</span><br><span class="line">             publishProgress((int) ((i / (float) count) * 100));</span><br><span class="line">             // Escape early if cancel() is called</span><br><span class="line">             if (isCancelled()) break;</span><br><span class="line">         &#125;</span><br><span class="line">         return totalSize;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     protected void onProgressUpdate(Integer... progress) &#123;</span><br><span class="line">         setProgressPercent(progress[0]);</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     protected void onPostExecute(Long result) &#123;</span><br><span class="line">         showDialog(&quot;Downloaded &quot; + result + &quot; bytes&quot;);</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="一旦创建了任务需要在主线程中去调用"><a href="#一旦创建了任务需要在主线程中去调用" class="headerlink" title="一旦创建了任务需要在主线程中去调用"></a>一旦创建了任务需要在主线程中去调用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">new DownloadFilesTask().execute(url1, url2, url3);</span><br></pre></td></tr></table></figure>
+<p>AsyncTask&lt;URL, Integer, Long&gt;这三个分别对应<br>1.Params—-在主线程调用时传入的参数类型<br>2.Progress—由于在后台执行，该参数可以提供一个进度条或者等候界面（类似loading…）执行进度单元的类型，如果不需要则设为Void<br>3.Result—如果需要返回一个值给主线程可以设置参数形式</p>
+<h4 id="最终在界面实现方式可以是这样"><a href="#最终在界面实现方式可以是这样" class="headerlink" title="最终在界面实现方式可以是这样"></a>最终在界面实现方式可以是这样</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">   class MyNsTask extends AsyncTask&lt;String, Void, String&gt; &#123;</span><br><span class="line"></span><br><span class="line">        @Override</span><br><span class="line">        protected String doInBackground(String... strings) &#123;</span><br><span class="line">            try &#123;</span><br><span class="line">                address = showDnsIp(mEdiText.getText().toString());</span><br><span class="line">            &#125; catch (UnknownHostException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125; catch (TextParseException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">            return address;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        @Override</span><br><span class="line">        protected void onPostExecute(String address) &#123;</span><br><span class="line">            super.onPostExecute(address);</span><br><span class="line">            mTextView.setText(address);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        /**</span><br><span class="line">         * 查询时等待界面（可添加loading..）</span><br><span class="line">         */</span><br><span class="line">//    @Override</span><br><span class="line">//    protected void onPreExecute() &#123;</span><br><span class="line">////            mTextView.setText(&quot;Wait while loading...&quot;);</span><br><span class="line">//        super.onPreExecute();</span><br><span class="line">//    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="调用函数并将结果显示在Textview中"><a href="#调用函数并将结果显示在Textview中" class="headerlink" title="调用函数并将结果显示在Textview中"></a>调用函数并将结果显示在Textview中</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">   /**</span><br><span class="line">         * 搜素按钮的点击事件</span><br><span class="line">         * 点击时执行线程</span><br><span class="line">         */</span><br><span class="line">        mButton.setOnClickListener(new View.OnClickListener() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void onClick(View v) &#123;</span><br><span class="line">                if (mEdiText.getText().toString().trim().equals(&quot;&quot;) ) &#123;</span><br><span class="line">                    mTextView.setText(&quot;Please enter domain name&quot;);</span><br><span class="line">                &#125; else &#123;</span><br><span class="line">//调用线程1</span><br><span class="line">                    MyNsTask nsTask=new MyNsTask();</span><br><span class="line">                    Log.d(&quot;--------&quot;+mEdiText.getText().toString());</span><br><span class="line">                    nsTask.execute(mEdiText.getText().toString());</span><br><span class="line"></span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="界面"><a href="#界面" class="headerlink" title="界面"></a>界面</h3><p><img src="https://upload-images.jianshu.io/upload_images/13139591-8055b676eb6aef26.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="ns--page.png"><br>这个界面很简单，可以自己设计。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">&lt;LinearLayout</span><br><span class="line">    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line">    android:id=&quot;@+id/nslookup_layout&quot;</span><br><span class="line">    android:orientation=&quot;vertical&quot;</span><br><span class="line">    android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    android:layout_height=&quot;match_parent&quot;&gt;</span><br><span class="line">    &lt;LinearLayout</span><br><span class="line">        android:layout_marginTop=&quot;20dp&quot;</span><br><span class="line">        android:layout_width=&quot;match_parent&quot;</span><br><span class="line">        android:layout_height=&quot;wrap_content&quot;&gt;</span><br><span class="line"></span><br><span class="line">        &lt;EditText</span><br><span class="line">            android:id=&quot;@+id/edit_nslookup&quot;</span><br><span class="line">            android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">            android:layout_weight=&quot;1&quot;</span><br><span class="line">            android:hint=&quot;Enter domain name&quot;</span><br><span class="line">            android:lines=&quot;1&quot;</span><br><span class="line">            android:singleLine=&quot;true&quot;</span><br><span class="line">            android:layout_width=&quot;match_parent&quot; /&gt;</span><br><span class="line">        &lt;Button</span><br><span class="line">            android:id=&quot;@+id/btn_ns_clear&quot;</span><br><span class="line">            android:background=&quot;@drawable/ic_btn_clear&quot;</span><br><span class="line">            android:layout_width=&quot;25dp&quot;</span><br><span class="line">            android:layout_height=&quot;25dp&quot;</span><br><span class="line">            android:visibility=&quot;gone&quot;/&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/LinearLayout&gt;</span><br><span class="line">    &lt;LinearLayout</span><br><span class="line"></span><br><span class="line">        android:layout_marginTop=&quot;10dp&quot;</span><br><span class="line">        android:layout_width=&quot;match_parent&quot;</span><br><span class="line">        android:layout_height=&quot;match_parent&quot;</span><br><span class="line">        android:orientation=&quot;vertical&quot;&gt;</span><br><span class="line"></span><br><span class="line">        &lt;Button</span><br><span class="line">            android:layout_marginBottom=&quot;10dp&quot;</span><br><span class="line">            android:layout_gravity=&quot;center&quot;</span><br><span class="line">            android:gravity=&quot;center&quot;</span><br><span class="line">            android:id=&quot;@+id/btn_nslookup&quot;</span><br><span class="line">            android:layout_width=&quot;100dp&quot;</span><br><span class="line">            android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">            android:text=&quot;lookup&quot; /&gt;</span><br><span class="line"></span><br><span class="line">        &lt;TextView</span><br><span class="line">            android:layout_width=&quot;match_parent&quot;</span><br><span class="line">            android:layout_height=&quot;60dp&quot;</span><br><span class="line">            android:gravity=&quot;center_vertical&quot;</span><br><span class="line">            android:text=&quot;Search result：&quot;</span><br><span class="line">            android:textSize=&quot;20sp&quot; /&gt;</span><br><span class="line"></span><br><span class="line">        &lt;TextView</span><br><span class="line">            android:id=&quot;@+id/text_showip&quot;</span><br><span class="line">            android:layout_width=&quot;match_parent&quot;</span><br><span class="line">            android:layout_height=&quot;122dp&quot;</span><br><span class="line">            android:background=&quot;#5e2929&quot;</span><br><span class="line">            android:textIsSelectable=&quot;true&quot;</span><br><span class="line">            android:textSize=&quot;24sp&quot; /&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &lt;/LinearLayout&gt;</span><br><span class="line"></span><br><span class="line">&lt;/LinearLayout&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="设置可以查看搜索历史记录的menu"><a href="#设置可以查看搜索历史记录的menu" class="headerlink" title="设置可以查看搜索历史记录的menu"></a>设置可以查看搜索历史记录的menu</h3><p>大致情况就是  查询时如果访问成功，则将域名用sharedpreferences存起来，利用一个符号比如逗号将每个域名连接起来拼成长字符串，之后在以逗号切割成一个个item放入dialog中。<br>实现的一个效果大概这样<br><img src="https://upload-images.jianshu.io/upload_images/13139591-35eedd7d68adda4c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="ns--item1.png"><br>点击右上角可以弹出菜单<br><img src="https://upload-images.jianshu.io/upload_images/13139591-c0facc2014ee5082.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="ns--item2.png"><br>点击按钮会弹出一个dialog显示搜索的记录（搜索失败，或者域名不对不会出现在历史记录）<br><img src="https://upload-images.jianshu.io/upload_images/13139591-0b3352abfc985fc8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="nx--item3.png"></p>
+<h3 id="活动中设置menu菜单"><a href="#活动中设置menu菜单" class="headerlink" title="活动中设置menu菜单"></a>活动中设置menu菜单</h3><p>设置菜单比较简单就不多说了主要这三个方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">     *  创建菜单</span><br><span class="line">     **/</span><br><span class="line">   @Override</span><br><span class="line">   public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) &#123;</span><br><span class="line">       inflater.inflate(R.menu.menu_nslookup_history,menu);</span><br><span class="line">       super.onCreateOptionsMenu(menu, inflater);</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   @Override</span><br><span class="line">   public void onPrepareOptionsMenu(Menu menu) &#123;</span><br><span class="line">       super.onPrepareOptionsMenu(menu);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   /**</span><br><span class="line">    * 设置菜单中的history按钮</span><br><span class="line">    * @param item</span><br><span class="line">    * @return</span><br><span class="line">    */</span><br><span class="line">   @Override</span><br><span class="line">   public boolean onOptionsItemSelected(MenuItem item) &#123;</span><br><span class="line">       Log.i(&quot;NsLookupFragment onOptionsItemSelected&quot;);</span><br><span class="line">       switch (item.getItemId())&#123;</span><br><span class="line">           case R.id.item_ns_history:</span><br><span class="line">               //显示对话框</span><br><span class="line">               showHistoryDialog();</span><br><span class="line">               break;</span><br><span class="line">               default:break;</span><br><span class="line">       &#125;</span><br><span class="line">       return super.onOptionsItemSelected(item);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
+<p>设置item布局文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;menu xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;</span><br><span class="line">    &lt;item</span><br><span class="line">        android:id=&quot;@+id/item_ns_history&quot;</span><br><span class="line">        android:title=&quot;history&quot;</span><br><span class="line">        /&gt;</span><br><span class="line">&lt;/menu&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="点击菜单弹出对话框，点击clear可以清除历史记录"><a href="#点击菜单弹出对话框，点击clear可以清除历史记录" class="headerlink" title="点击菜单弹出对话框，点击clear可以清除历史记录"></a>点击菜单弹出对话框，点击clear可以清除历史记录</h3><p>下面是dialog生成方式和实现history的方法放在了一起，主要用到的方法是setHistory（）首先是生成dialog 的方法放在了上面onOptionsItemSelected(MenuItem item)的方法中<br>下面贴上代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">     * 显示域名历史记录的dialog</span><br><span class="line">     */</span><br><span class="line">    public void showHistoryDialog()&#123;</span><br><span class="line">        mAllActivity=getActivity();</span><br><span class="line">        AlertDialog.Builder mDialog=new AlertDialog.Builder(getActivity());</span><br><span class="line">        /**</span><br><span class="line">         * 设置列表内容(将从sp中取出的字符串以&quot;,&quot;分割成字符串数组)</span><br><span class="line">         * 点击item时在输入框填入对应值</span><br><span class="line">         * 点击clear时清空dialog</span><br><span class="line">         */</span><br><span class="line">        final String[] arrayOfString = this.getHistory().split(&quot;,&quot;);</span><br><span class="line">        AlertDialog.Builder setItemsBuilder =</span><br><span class="line">                mDialog.setItems(arrayOfString, new DialogInterface.OnClickListener() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void onClick(DialogInterface dialog, int which) &#123;</span><br><span class="line">                setEditText(arrayOfString[which]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        mDialog.setTitle(&quot;History&quot;).setPositiveButton</span><br><span class="line">                (&quot;Clear&quot;, new DialogInterface.OnClickListener() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void onClick(DialogInterface dialog, int which) &#123;</span><br><span class="line">                setHistoryNull();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        mDialog.create();</span><br><span class="line">        mDialog.show();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>保存历史到sharedpreferences中，因为要保存的数据也不会太多，所以没有使用数据库而是采用了轻量级的存储方案那就是sp，键值对，让数据对应history<br>首先是将搜到的域名以长字符串连接起来<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">private SharedPreferences mSharedPreferences;</span><br><span class="line"></span><br><span class="line"> /**</span><br><span class="line">     * 判断并将域名存入sp（以&quot;,&quot;为间隔将字符串拼接成长字符串）</span><br><span class="line">     * @param domainName</span><br><span class="line">     * @return</span><br><span class="line">     */</span><br><span class="line">    public void setHistory(String domainName) &#123;</span><br><span class="line">        SharedPreferences.Editor localEditor;</span><br><span class="line">        String nsString = this.mSharedPreferences.getString(&quot;history&quot;, &quot;&quot;);</span><br><span class="line">        //判断字符串是否为空</span><br><span class="line">        if (nsString==&quot;&quot;)&#123;</span><br><span class="line">            nsString = domainName;</span><br><span class="line">            localEditor = this.mSharedPreferences.edit();</span><br><span class="line">            localEditor.putString(&quot;history&quot;, nsString);</span><br><span class="line">            localEditor.commit();</span><br><span class="line">        &#125;</span><br><span class="line">        //判断字符串是否含有搜索过的的域名</span><br><span class="line">        if (!nsString.contains(domainName)) &#123;</span><br><span class="line">            nsString = nsString + &quot;,&quot; + domainName;</span><br><span class="line">            localEditor = this.mSharedPreferences.edit();</span><br><span class="line">            localEditor.putString(&quot;history&quot;, nsString);</span><br><span class="line">            localEditor.commit();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>该函数放在查询功能中加一个判断<br>放在之前的主函数中即可<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//查询成功则将域名传入sp</span><br><span class="line">      if (mlookup.getResult()==Lookup.SUCCESSFUL)&#123;</span><br><span class="line">          setHistory(s);</span><br><span class="line">          Log.d(&quot;--------调试sp-------&quot;);</span><br><span class="line">          System.out.print(mSharedPreferences.getString(&quot;history&quot;,&quot;&quot;));</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure></p>
+<p>之后是关于clear清空按钮的函数以及sp获取方法等<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">     * 从sp中获取数据</span><br><span class="line">     */</span><br><span class="line">    public String getHistory()</span><br><span class="line">    &#123;</span><br><span class="line">        return this.mSharedPreferences.getString(&quot;history&quot;, &quot;&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 清空dialog</span><br><span class="line">     */</span><br><span class="line">    public void setHistoryNull()</span><br><span class="line">    &#123;</span><br><span class="line">        SharedPreferences.Editor localEditor = this.mSharedPreferences.edit();</span><br><span class="line">        localEditor.putString(&quot;history&quot;, null);</span><br><span class="line">        localEditor.commit();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 设置输入框数据</span><br><span class="line">     * @param paramString</span><br><span class="line">     */</span><br><span class="line">    public void setEditText(String paramString)</span><br><span class="line">    &#123;</span><br><span class="line">        this.mEdiText.setText(paramString);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="做一个文本框清除按钮"><a href="#做一个文本框清除按钮" class="headerlink" title="做一个文本框清除按钮"></a>做一个文本框清除按钮</h3><p><img src="https://upload-images.jianshu.io/upload_images/13139591-d2267799c4ce0cd9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="ns--clear.png"><br>思路也很清晰将按钮放在文本框末端并且设置成隐藏，与文本框的焦点获取绑定到一起即可<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android:visibility=&quot;gone&quot;</span><br></pre></td></tr></table></figure></p>
+<p>那么之后在文件夹中添加一个图片类似于叉号的都可以<br>在drawable文件夹右键→new→image asset<br><img src="https://upload-images.jianshu.io/upload_images/13139591-e07fa506fb694bc0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="imageassert.png"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/13139591-20a45c6c6eee876b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="imageassert1.png"><br>google提供了很多Android原生按钮，样式背景以及颜色都可以自己实设置之后点击next然后添加到文件夹即可<br>然后实现代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">mClearButton=(Button) mNslookupView.findViewById(R.id.btn_ns_clear);</span><br><span class="line">        mClearButton.setOnClickListener(new View.OnClickListener() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void onClick(View v) &#123;</span><br><span class="line">                //点击按钮清空输入框</span><br><span class="line">                mEdiText.getText().clear();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        mTextView = (TextView) mNslookupView.findViewById(R.id.text_showip);</span><br><span class="line">        //输入框</span><br><span class="line">        mEdiText = (EditText) mNslookupView.findViewById(R.id.edit_nslookup);</span><br><span class="line">        //用户触摸EditText得到焦点</span><br><span class="line">        mEdiText.setOnFocusChangeListener(new View.OnFocusChangeListener() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void onFocusChange(View v, boolean hasFocus) &#123;</span><br><span class="line">                if (hasFocus)&#123;</span><br><span class="line">                    //得到焦点时显示清除按钮</span><br><span class="line">                    mClearButton.setVisibility(View.VISIBLE);</span><br><span class="line">                &#125;else &#123;</span><br><span class="line">                    //失去焦点时隐藏清除按钮</span><br><span class="line">                    mClearButton.setVisibility(View.GONE);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure></p>
+<p>大概就完成了这么多，还可以添加一些东西例如回车键绑定搜索按键，对获取到的信息进行格式化处理，点击按钮直接copy显示出的ip点击并且直接访问该网站，最近在学习material design设计模式等等。<br>Android目前还在学习中在这里做点小总结，希望以后坚持下去，对工作或学习做一些总结，每天收获一点东西，厚积薄发。<br>最后贴上一张偶像照片。<br><img src="https://upload-images.jianshu.io/upload_images/13139591-4a288c769c81d6f9.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="王力宏《无问西东》饰演热血飞行员沈光耀.jpg"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/30/Android-针对DAO层的单元测试/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="不羁的老表哥">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="忘我">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/30/Android-针对DAO层的单元测试/" itemprop="url">Android-针对DAO层的单元测试</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-30T09:06:04+08:00">
+                2018-07-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Android的单元测试大家都不陌生，必要的单元测试可以提高工作效率，省去大量的在Android真机或者虚拟机上的调试，提高代码质量。尤其是在团队项目开发中，为自己写的代码负责，提高项目后期的可维护性。这篇文章算是个人心得体会吧。<br>前几天接了一个任务就是对团队中现有的一个项目的dao层写单元测试（数据访问对象），该项目中的数据库适配器（MyDataBaseAdapter）中集成了大量的关于数据库中增，删，改，查的方法，现在要测试这些函数的功能。然后就遇到了一些问题，比如说不能对原有的数据库带来脏数据，而且要测试这些方法还必须要在数据库中测试。搜集了一些资料比如Spring结合junit利用对数据库的回滚操作进行测试。但还是找到了更好的方法，就是robolectric框架。<br>有关Robolectric测试框架的详细知识个人感觉简书：键盘男<a href="https://www.jianshu.com/u/0ef3dc77079c他的博客写的是很不错的有关其他的测试可以参考一下。" target="_blank" rel="noopener">https://www.jianshu.com/u/0ef3dc77079c他的博客写的是很不错的有关其他的测试可以参考一下。</a><br>接下来总结一下对dao层的测试。</p>
+<h4 id="添加依赖，-3-3-2并不是最新版本"><a href="#添加依赖，-3-3-2并不是最新版本" class="headerlink" title="添加依赖，(3.3.2并不是最新版本)"></a>添加依赖，(3.3.2并不是最新版本)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">testCompile &apos;org.robolectric:robolectric:3.3.2&apos;</span><br></pre></td></tr></table></figure>
+<h4 id="定义数据工具类"><a href="#定义数据工具类" class="headerlink" title="定义数据工具类"></a>定义数据工具类</h4><p>定义的字段对应之前数据库的字段（比如原数据库需要测试id或name的删除更新等，根据需求定义）<br>如果数据库表字段较少，可以直接插入数据，不用定义该类<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">public class BaseInfo &#123;</span><br><span class="line">   </span><br><span class="line">    private int id(字段1)；</span><br><span class="line">    private String name(字段2);</span><br><span class="line">               ·</span><br><span class="line">               ·</span><br><span class="line">               ·</span><br><span class="line">               ·</span><br><span class="line">               ·</span><br><span class="line">    private int 字段13；</span><br><span class="line">    private String 字段14;</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">    public BaseInfo(int id,String name,``````,) &#123;</span><br><span class="line">        super();</span><br><span class="line">    this.id=id;</span><br><span class="line">    this.name=name;</span><br><span class="line">            `</span><br><span class="line">            `</span><br><span class="line">            `</span><br><span class="line">     this.XX=XX;</span><br><span class="line">      </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">设置geter和seter</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>####定义各表字段<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<h4 id="定义测试用的insert函数（将数据插入数据库）"><a href="#定义测试用的insert函数（将数据插入数据库）" class="headerlink" title="定义测试用的insert函数（将数据插入数据库）"></a>定义测试用的insert函数（将数据插入数据库）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public Long insertTestData(BasemInfo basemInfo)&#123;</span><br><span class="line">                //hashmap保存表列与数据</span><br><span class="line">		ContentValues initialValues = new ContentValues();</span><br><span class="line">		initialValues.put(列名._ID,baseInfo.getID());</span><br><span class="line">		`</span><br><span class="line">                `</span><br><span class="line">                `</span><br><span class="line">                `</span><br><span class="line">		initialValues.put(列名.NAME,baseInfo.getNAME());</span><br><span class="line">		return  mSQLiteDatabase.insert(数据库表名, null, initialValues);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="测试之前的环境配置"><a href="#测试之前的环境配置" class="headerlink" title="测试之前的环境配置"></a>测试之前的环境配置</h4><p>用这个框架测试之前建立一个新的数据库，用于各种测试，每个测试结束后自动删除数据库，所以不用担心对原有的数据库造成干扰。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br></pre></td><td class="code"><pre><span class="line">@RunWith(RobolectricTestRunner.class)//Robolectric是一个单元测试框架，可以对Android SDK jar进行消除</span><br><span class="line">@Config(constants = BuildConfig.class, sdk = 21, manifest = Config.NONE)//配置环境sdk版本等等</span><br><span class="line">/**</span><br><span class="line"> * 该类用于测试数据库的一些增删改查的方法</span><br><span class="line"> * 测试用类</span><br><span class="line"> */</span><br><span class="line">public class TestMyDataBaseAdapter &#123;</span><br><span class="line"></span><br><span class="line">    public MyDataBaseAdapter myDataBaseAdapter;</span><br><span class="line">    private SQLiteDatabase mSQliteDatabase;</span><br><span class="line">    private Context mContext;</span><br><span class="line">    //用来添加一条模拟数据（自定义的数据bean类，收集数据且对应数据库字段）</span><br><span class="line">    private static BaseInfo testBaseInfo;</span><br><span class="line"></span><br><span class="line">    @Before</span><br><span class="line">    public void setUp() &#123;</span><br><span class="line">        //创建并打开数据库</span><br><span class="line">        myDataBaseAdapter =new MyDataBaseAdapter(RuntimeEnvironment.application);</span><br><span class="line">        //获得测试环境</span><br><span class="line">        mContext = RuntimeEnvironment.application;</span><br><span class="line">        mSQliteDatabase = myDataBaseAdapter.getSQLiteDatabase();</span><br><span class="line">        //输出log</span><br><span class="line">        ShadowLog.stream=System.out;</span><br><span class="line">        /**</span><br><span class="line">         * 测试用的模拟数据</span><br><span class="line">         */</span><br><span class="line">        testBaseInfo=new BaseInfo(</span><br><span class="line">                4,//数据id=4</span><br><span class="line">                张三,//下面均为虚拟测试数据（每个数据对应数据库表的字段，根据被测的函数模拟即可）</span><br><span class="line">                0,</span><br><span class="line">                null,</span><br><span class="line">                &quot;测试1&quot;,</span><br><span class="line">                0,</span><br><span class="line">                1000,</span><br><span class="line">                &quot;a&quot;,</span><br><span class="line">                false,</span><br><span class="line">                0,</span><br><span class="line">                0,</span><br><span class="line">                0,</span><br><span class="line">                0,</span><br><span class="line">                null,</span><br><span class="line">                null,</span><br><span class="line">                (byte)1,</span><br><span class="line">                (byte)0,</span><br><span class="line">                0,</span><br><span class="line">                0</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @After</span><br><span class="line">    public void tearDown() &#123;</span><br><span class="line">        //结束测试关闭数据库</span><br><span class="line">        myDataBaseAdapter.close();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 根据id更新name</span><br><span class="line">     *</span><br><span class="line">     */</span><br><span class="line">    @Test</span><br><span class="line">    public void update() &#123;</span><br><span class="line">        //数据库表插入测试数据</span><br><span class="line">        myDataBaseAdapter.insertTestData(testBaseInfo);</span><br><span class="line">        //调用被测试的方法update，修改id=4的name值为李四（原本为张三）</span><br><span class="line">        //输入期望的值</span><br><span class="line">        int expectValues=李四;</span><br><span class="line">        myDataBaseAdapter.update(testBaseInfo.getID(),expectValues);</span><br><span class="line">        Cursor cursor= myDataBaseAdapter.getDataByTimerId(testBaseInfo.getID());</span><br><span class="line">        //利用Cursor查出来真实的值（也可以直接用Sql语句）</span><br><span class="line">        cursor.moveToFirst();</span><br><span class="line">        String t actualValues=cursor.getString(MyDataBaseAdapter.NAME_INDEX);</span><br><span class="line">        //对比两者值是否相同</span><br><span class="line">        cursor.close();</span><br><span class="line">        Assert.assertEquals(expectValues,actualValues);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 更新Xxxx</span><br><span class="line">     */</span><br><span class="line">    @Test</span><br><span class="line">    public void updateXxxx() &#123;</span><br><span class="line">         1.测试数据插入数据库</span><br><span class="line">         2.调用被测函数，修改对应参数的值（期望值）</span><br><span class="line">         3.取出该数据（真实值）</span><br><span class="line">         4.期望值与真实值比较</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">     /**</span><br><span class="line">     * 插入Xxxx</span><br><span class="line">     */</span><br><span class="line">    @Test</span><br><span class="line">    public void insertXxxx() &#123;</span><br><span class="line">         1.调用被测函数，插入一条数据（期望值）</span><br><span class="line">         2.取出该数据（真实值）</span><br><span class="line">         3.期望值与真实值比较</span><br><span class="line">    &#125;</span><br><span class="line">            ·</span><br><span class="line">            ·</span><br><span class="line">            ·</span><br><span class="line">  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>查找，删除等也可以用类似的思想单元测试。<br>正在学习安卓，希望能够多积累，多提升</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/20/Android-邮箱格式的验证/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="不羁的老表哥">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="忘我">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/20/Android-邮箱格式的验证/" itemprop="url">Android-邮箱格式的验证</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-20T16:09:31+08:00">
+                2018-07-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Android-实现对邮箱的验证"><a href="#Android-实现对邮箱的验证" class="headerlink" title="Android-实现对邮箱的验证"></a>Android-实现对邮箱的验证</h1><p>由于Android开发中经常会使用到表单，还有相关的提交，验证等等。接下来是一个关于EditText的邮箱格式验证：</p>
+<h4 id="那么首先要有一个布局文件"><a href="#那么首先要有一个布局文件" class="headerlink" title="那么首先要有一个布局文件"></a>那么首先要有一个布局文件</h4><p>相关代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&lt;TextView</span><br><span class="line">       android:id=&quot;@+id/textView3&quot;</span><br><span class="line">       android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">       android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">       android:layout_alignParentStart=&quot;true&quot;</span><br><span class="line">       android:layout_alignParentTop=&quot;true&quot;</span><br><span class="line">       android:layout_marginStart=&quot;30dp&quot;</span><br><span class="line">       android:layout_marginTop=&quot;167dp&quot;</span><br><span class="line">       android:text=&quot;邮箱&quot;</span><br><span class="line">       tools:layout_editor_absoluteX=&quot;55dp&quot;</span><br><span class="line">       tools:layout_editor_absoluteY=&quot;170dp&quot; /&gt;</span><br><span class="line"></span><br><span class="line">   &lt;EditText</span><br><span class="line">       android:id=&quot;@+id/ed_email&quot;</span><br><span class="line">       android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">       android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">       android:layout_alignParentEnd=&quot;true&quot;</span><br><span class="line">       android:layout_below=&quot;@+id/textView&quot;</span><br><span class="line">       android:layout_marginEnd=&quot;21dp&quot;</span><br><span class="line">       android:ems=&quot;10&quot;</span><br><span class="line">       android:inputType=&quot;textPersonName&quot;</span><br><span class="line">       android:text=&quot;Name&quot;</span><br><span class="line">       tools:layout_editor_absoluteX=&quot;135dp&quot;</span><br><span class="line">       tools:layout_editor_absoluteY=&quot;22dp&quot; /&gt;</span><br><span class="line"></span><br><span class="line">   &lt;Button</span><br><span class="line">       android:id=&quot;@+id/button&quot;</span><br><span class="line">       android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">       android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">       android:layout_centerInParent=&quot;true&quot;</span><br><span class="line">       android:text=&quot;提交&quot;</span><br><span class="line">       tools:layout_editor_absoluteX=&quot;118dp&quot;</span><br><span class="line">       tools:layout_editor_absoluteY=&quot;217dp&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="邮箱验证需要的函数isEmail（）："><a href="#邮箱验证需要的函数isEmail（）：" class="headerlink" title="邮箱验证需要的函数isEmail（）："></a>邮箱验证需要的函数isEmail（）：</h4><p>邮箱的格式应改为：数字或者字母@数字或字母.数字或字母</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public static boolean isEmail(String email)&#123;</span><br><span class="line">        if (null==email || &quot;&quot;.equals(email)) return false;</span><br><span class="line">        //Pattern p = Pattern.compile(&quot;\\w+@(\\w+.)+[a-z]&#123;2,3&#125;&quot;); //简单匹配</span><br><span class="line">        Pattern p =  Pattern.compile(&quot;\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*&quot;);//复杂匹配</span><br><span class="line">        Matcher m = p.matcher(email);</span><br><span class="line">        return m.matches();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="接下来就要在MainActivity中实现逻辑了："><a href="#接下来就要在MainActivity中实现逻辑了：" class="headerlink" title="接下来就要在MainActivity中实现逻辑了："></a>接下来就要在MainActivity中实现逻辑了：</h4><p>简单的通过id获取各个控件，还有其他的就不多说了。主要是实现对isEmail（）函数的调用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">public class MainActivity extends AppCompatActivity &#123;</span><br><span class="line">  </span><br><span class="line">	//声明需要的控件</span><br><span class="line">    private static EditText ed_email;</span><br><span class="line">    private Button button;</span><br><span class="line">    //由于Android边编译边生成的原理，将匹配字符串放入全局，作为静态变量可以提高效率</span><br><span class="line">    public static Pattern p = </span><br><span class="line">		    Pattern.compile(&quot;\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*&quot;);</span><br><span class="line">   </span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    protected void onCreate(Bundle savedInstanceState) &#123;</span><br><span class="line">        super.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line">        setFullScreen();</span><br><span class="line">        allWindow();</span><br><span class="line">		//实体化控件</span><br><span class="line">        ed_email=(EditText)findViewById(R.id.ed_email);</span><br><span class="line">        button=(Button)findViewById(R.id.button);</span><br><span class="line">        //对button添加点击事件</span><br><span class="line">        button.setOnClickListener(new View.OnClickListener() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void onClick(View v) &#123;</span><br><span class="line">            //调用编写的isEmail()函数</span><br><span class="line">            //获取到输入的内容并转换为字符串形式，这样才可以进行匹配，且邮箱格式不能太长，字符串长度31以内</span><br><span class="line">            //按照实际需要可以添加不同的事件</span><br><span class="line">                if (isEmail(ed_email.getText().toString().trim()) &amp;&amp; ed_email.getText().toString().trim().length()&lt;=31)&#123;</span><br><span class="line">                    Toast.makeText(MainActivity.this,&quot;邮箱验证成功&quot;,Toast.LENGTH_SHORT).show();</span><br><span class="line">                &#125;else &#123;</span><br><span class="line">                    Toast.makeText(MainActivity.this,&quot;邮箱格式错误&quot;,Toast.LENGTH_SHORT).show();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">   //验证函数优化版</span><br><span class="line">    public static boolean isEmail(String email)&#123;</span><br><span class="line">        if (null==email || &quot;&quot;.equals(email)) return false;</span><br><span class="line">        Matcher m = p.matcher(email);</span><br><span class="line">        return m.matches();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><em>以上就是对邮箱的验证，第一次写博客希望能共同学习，共同提高</em></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">不羁的老表哥</p>
+              <p class="site-description motion-element" itemprop="description">不在梅边在柳边，忘了时间忘了我。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/bjdlbg" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">不羁的老表哥</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
 <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
