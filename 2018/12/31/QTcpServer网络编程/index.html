@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script>
+    (function () {
+        if ('') {
+            if (prompt('请输入文章密码') !== '') {
+                alert('密码错误！');
+                if (history.length === 1) {
+                    location.replace("http://bjdlbg.github.io"); // 这里替换成你的首页
+                } else {
+                    history.back();
+                }
+            }
+        }
+    })();
+</script>
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Qt,C++,Linux,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="期末大作业是要做一个网络聊天室，于是在下面学习了一个开源的项目，里面能够学习的东西还是蛮多的，在这里做一下总结。 项目地址Group6ChatRoom QT环境配置嵌入式项目，要求程序可以在Linux上面可以跑，选择使用Qt，C++毕竟是面向对象的编程语言，用来封装方法还是很方便的。系统使用的是deepin，深度商店还是比较方便的直接下载Qt Creator，环境配置比GTK+省略了不少东西。项目">
+<meta name="keywords" content="Qt,C++,Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="QTcpServer 总结">
+<meta property="og:url" content="http://yoursite.com/2018/12/31/QTcpServer网络编程/index.html">
+<meta property="og:site_name" content="忘我">
+<meta property="og:description" content="期末大作业是要做一个网络聊天室，于是在下面学习了一个开源的项目，里面能够学习的东西还是蛮多的，在这里做一下总结。 项目地址Group6ChatRoom QT环境配置嵌入式项目，要求程序可以在Linux上面可以跑，选择使用Qt，C++毕竟是面向对象的编程语言，用来封装方法还是很方便的。系统使用的是deepin，深度商店还是比较方便的直接下载Qt Creator，环境配置比GTK+省略了不少东西。项目">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-01-01T12:04:20.729Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="QTcpServer 总结">
+<meta name="twitter:description" content="期末大作业是要做一个网络聊天室，于是在下面学习了一个开源的项目，里面能够学习的东西还是蛮多的，在这里做一下总结。 项目地址Group6ChatRoom QT环境配置嵌入式项目，要求程序可以在Linux上面可以跑，选择使用Qt，C++毕竟是面向对象的编程语言，用来封装方法还是很方便的。系统使用的是deepin，深度商店还是比较方便的直接下载Qt Creator，环境配置比GTK+省略了不少东西。项目">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/31/QTcpServer网络编程/">
+
+
+
+
+
+  <title>QTcpServer 总结 | 忘我</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">忘我</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不在梅边在柳边，忘了时间忘了我。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/31/QTcpServer网络编程/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jeremy.Ji">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/xiaoren.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="忘我">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">QTcpServer 总结</h1>
+        
+
+        <div class="post-meta">
+          
+
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-31T17:03:38+08:00">
+                2018-12-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C++</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.1k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>期末大作业是要做一个网络聊天室，于是在下面学习了一个开源的项目，里面能够学习的东西还是蛮多的，在这里做一下总结。</p>
+<h2 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a>项目地址</h2><p><a href="https://github.com/bjdlbg/Qt-Group6ChatRoom" target="_blank" rel="noopener">Group6ChatRoom</a></p>
+<h2 id="QT环境配置"><a href="#QT环境配置" class="headerlink" title="QT环境配置"></a>QT环境配置</h2><p>嵌入式项目，要求程序可以在Linux上面可以跑，选择使用Qt，C++毕竟是面向对象的编程语言，用来封装方法还是很方便的。<br>系统使用的是deepin，深度商店还是比较方便的直接下载Qt Creator，环境配置比GTK+省略了不少东西。<br>项目.pro中添加support<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 对网络请求必须加上network</span><br><span class="line">QT       += core gui network</span><br></pre></td></tr></table></figure></p>
+<h2 id="QTcpServer用法总结"><a href="#QTcpServer用法总结" class="headerlink" title="QTcpServer用法总结"></a>QTcpServer用法总结</h2><h3 id="头函数需要添加库文件"><a href="#头函数需要添加库文件" class="headerlink" title="头函数需要添加库文件"></a>头函数需要添加库文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;QTcpSocket&gt;</span><br><span class="line">#include &lt;QTcpServer&gt;</span><br></pre></td></tr></table></figure>
+<p>槽函数也是自己定义，连接和断开时候的事件。<br>这里是传入线程指针，server端接受到client连接请求时候的socket描述符，会为对应的描述符创建对应线程去处理这个请求。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">void on_client_connected(ClientThread* clientThread);</span><br><span class="line">void on_client_disconnected(ClientThread* clientThread);</span><br></pre></td></tr></table></figure></p>
+<p>头文件中声明<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">protected:</span><br><span class="line">    //重新实现该方法用来接受client，并创建线程处理该连接</span><br><span class="line">    void incomingConnection(qintptr socketDescriptor) override;</span><br></pre></td></tr></table></figure></p>
+<p>该方法在代码中实现，为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"> void Server::incomingConnection(qintptr socketDescriptor)&#123;</span><br><span class="line">    qDebug() &lt;&lt; socketDescriptor &lt;&lt; &quot; 连接中...&quot;;</span><br><span class="line">    QTcpSocket *socket = new QTcpSocket();</span><br><span class="line">    ClientThread *cliThread = new ClientThread(socketDescriptor,socket,this);</span><br><span class="line"></span><br><span class="line">    //为连接进来的线程绑定事件</span><br><span class="line">    connect(cliThread, SIGNAL(finished()),cliThread,SLOT(deleteLater()));</span><br><span class="line">    connect(cliThread, SIGNAL(connected(ClientThread*)),this,SIGNAL(connected(ClientThread*)));</span><br><span class="line">    connect(cliThread, SIGNAL(connected(ClientThread*)),this,SLOT(on_client_connected(ClientThread*)));</span><br><span class="line">    ·</span><br><span class="line">    ·</span><br><span class="line">    ·</span><br><span class="line">    connect(cliThread, SIGNAL(clientDisconnected(ClientThread*)),this,SIGNAL(clientDisconnected(ClientThread*)));</span><br><span class="line">   </span><br><span class="line"></span><br><span class="line">    //将socket转移到线程处理</span><br><span class="line">    socket-&gt;moveToThread(cliThread);</span><br><span class="line">    cliThread-&gt;start(); //启用线程</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="服务端开启监听，等待连接"><a href="#服务端开启监听，等待连接" class="headerlink" title="服务端开启监听，等待连接"></a>服务端开启监听，等待连接</h3><p>使用QTcpServer的异步模式，需要覆盖其中的一个listen函数，在调用listen（）相当于开启一个循环（不会调用waitForNewConnection（）一种阻塞方法或者叫做同步）,关键代码。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//默认使用host即“127.0.0.1”</span><br><span class="line">    //调用listen函数，在指定的端口号中进行任意监听 ps：Any参数表示任意IPv4地址0.0.0.0</span><br><span class="line">    if(!this-&gt;listen(QHostAddress::Any,port))&#123;</span><br><span class="line">        qDebug() &lt;&lt; &quot;无法启动服务端！&quot;;//log</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">    else&#123;</span><br><span class="line">        qDebug() &lt;&lt; &quot;server 监听中...&quot;;//log</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>该方法需要设置ip以及端口号，使用函数获取或者手动输入也可以。</p>
+<h3 id="客户端连接到服务端"><a href="#客户端连接到服务端" class="headerlink" title="客户端连接到服务端"></a>客户端连接到服务端</h3><p>关键代码，试图连接到主机host的指定端口 并立即return。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//获取地址</span><br><span class="line">    QHostAddress servAddr(serverIP);</span><br><span class="line">    ·</span><br><span class="line">    ·</span><br><span class="line">    //设置ip和端口号</span><br><span class="line">    connectToHost(servAddr,this-&gt;port);</span><br><span class="line">    waitForConnected(30000); //设置超时时间为30秒.</span><br></pre></td></tr></table></figure></p>
+<h2 id="QTcpSocket数据传送"><a href="#QTcpSocket数据传送" class="headerlink" title="QTcpSocket数据传送"></a>QTcpSocket数据传送</h2><p>qt中的该类提供了一个tcp套接字，面向传输，面向连接的可靠的传输协议。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">/** 将消息发送给所有线程*/</span><br><span class="line">void Server::sendTextToAll(QString text,ClientThread* except)&#123;</span><br><span class="line">    //用于暂存要发送的数据</span><br><span class="line">    QByteArray block;</span><br><span class="line">    //使用数据流写入数据 只写（设置为ReadWrite则为读写）</span><br><span class="line">    QDataStream out(&amp;block,QIODevice::WriteOnly);</span><br><span class="line">    //设置数据流的版本，客户端server与服务端Client版本需要相同</span><br><span class="line">    out.setVersion(QDataStream::Qt_5_8);</span><br><span class="line"></span><br><span class="line">    //设置初始值为0，设置长度</span><br><span class="line">    out &lt;&lt; (quint32)0 &lt;&lt; text;</span><br><span class="line"></span><br><span class="line">    //回到字节流的起始位置</span><br><span class="line">    out.device()-&gt;seek(0);</span><br><span class="line">    //重置字节流长度</span><br><span class="line">    out &lt;&lt; (quint32)(block.size() - sizeof(quint32));</span><br><span class="line">    qDebug() &lt;&lt; &quot;block.size() = &quot; &lt;&lt; block.size();//调试用（打印出block的长度）</span><br><span class="line"></span><br><span class="line">    qint64 x = 0;</span><br><span class="line">    //遍历线程列表</span><br><span class="line">    foreach(ClientThread* eachClient,clientThreadList)&#123;</span><br><span class="line">        if(except != NULL &amp;&amp; eachClient == except)</span><br><span class="line">            continue;</span><br><span class="line">        x = 0;</span><br><span class="line">        while(x &lt; block.size())&#123;</span><br><span class="line">            //向套接字缓存中写入数据（主要）</span><br><span class="line">            qint64 y = eachClient-&gt;getTcpSocket()-&gt;write(block);</span><br><span class="line">            x+=y;</span><br><span class="line">            //缓冲池在首次连接的时候没有数据，在首次连接成功时候打印出发送者</span><br><span class="line">            qDebug() &lt;&lt; eachClient-&gt;getUsername()&lt;&lt; &quot;/sent&quot; &lt;&lt; x ;//调试用（输出发送者）</span><br><span class="line">        &#125;</span><br><span class="line">        qDebug() &lt;&lt; &quot;-----&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="有关正则消息验证"><a href="#有关正则消息验证" class="headerlink" title="有关正则消息验证"></a>有关正则消息验证</h2><p>client 与 server 两端是分离的，可以开启多个client端，每一端发送的数据都要经过server的接收处理，分组转发。所以这里的思路是，所有向server端发送数据时候，对应的数据类型在Qstring字符串上进行处理（比如前面加上特定的字符：/pm就代表一条私聊消息），之后server在经过正则验证，不同的数据触发不同的信号。<br>总结一下capture（QRegularExpression类使用正则表达式提供模式匹配）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//私法消息的格式</span><br><span class="line">QString psersonal=&quot;/pm：&quot;+currentTime+myUsername+text</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//私人消息的验证</span><br><span class="line">QRegularExpression regex_private(&quot;^/pm:(.*)/(.*) : (.*)\n$&quot;);</span><br><span class="line">·</span><br><span class="line">·</span><br><span class="line">//</span><br><span class="line">QString senderName = match.captured(2);</span><br><span class="line">QString time = match.captured(1);</span><br><span class="line">QString text = match.captured(3);</span><br></pre></td></tr></table></figure>
+<p>分别提取对应括号中的文本信息。</p>
+<p>### </p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Qt/" rel="tag"># Qt</a>
+          
+            <a href="/tags/C/" rel="tag"># C++</a>
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/22/Android-Studio-结合gitlab使用总结/" rel="next" title="Android Studio 结合gitlab使用总结">
+                <i class="fa fa-chevron-left"></i> Android Studio 结合gitlab使用总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/01/01/永远的第一天/" rel="prev" title="永远的第一天">
+                永远的第一天 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/xiaoren.jpg" alt="Jeremy.Ji">
+            
+              <p class="site-author-name" itemprop="name">Jeremy.Ji</p>
+              <p class="site-description motion-element" itemprop="description">Search for the real things in the world</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/bjdlbg" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Recommend
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://material.io/develop/android/" title="Material Design" target="_blank">Material Design</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.iconfont.cn/" title="阿里矢量图标库" target="_blank">阿里矢量图标库</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://developer.android.com/" title="Android Developer" target="_blank">Android Developer</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://stackoverflow.com/" title="stackoverflow" target="_blank">stackoverflow</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#项目地址"><span class="nav-number">1.</span> <span class="nav-text">项目地址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#QT环境配置"><span class="nav-number">2.</span> <span class="nav-text">QT环境配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#QTcpServer用法总结"><span class="nav-number">3.</span> <span class="nav-text">QTcpServer用法总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#头函数需要添加库文件"><span class="nav-number">3.1.</span> <span class="nav-text">头函数需要添加库文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务端开启监听，等待连接"><span class="nav-number">3.2.</span> <span class="nav-text">服务端开启监听，等待连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#客户端连接到服务端"><span class="nav-number">3.3.</span> <span class="nav-text">客户端连接到服务端</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#QTcpSocket数据传送"><span class="nav-number">4.</span> <span class="nav-text">QTcpSocket数据传送</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有关正则消息验证"><span class="nav-number">5.</span> <span class="nav-text">有关正则消息验证</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jeremy.Ji</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">12.5k</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
