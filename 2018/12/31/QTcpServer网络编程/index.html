@@ -99,18 +99,18 @@
 
 
 
-<meta name="description" content="期末大作业是要做一个网络聊天室，于是在下面学习了一个开源的项目，里面能够学习的东西还是蛮多的，在这里做一下总结。 项目地址Group6ChatRoom QT环境配置嵌入式项目，要求程序可以在Linux上面可以跑，选择使用Qt，C++毕竟是面向对象的编程语言，用来封装方法还是很方便的。系统使用的是deepin，深度商店还是比较方便的直接下载Qt Creator，环境配置比GTK+省略了不少东西。项目">
+<meta name="description" content="期末大作业是要做一个网络聊天室，于是学习了一个开源的项目，里面能够学习的东西还是蛮多的，在这里做一下总结。 项目地址Group6ChatRoom QT环境配置嵌入式项目，要求程序可以在Linux上面可以跑，选择使用Qt，C++毕竟是面向对象的编程语言，用来封装方法还是很方便的。系统使用的是deepin，深度商店还是比较方便的直接下载Qt Creator，环境配置比GTK+省略了不少东西。项目.pr">
 <meta name="keywords" content="Linux,Qt,C++">
 <meta property="og:type" content="article">
 <meta property="og:title" content="QTcpServer 总结">
 <meta property="og:url" content="http://yoursite.com/2018/12/31/QTcpServer网络编程/index.html">
 <meta property="og:site_name" content="忘我">
-<meta property="og:description" content="期末大作业是要做一个网络聊天室，于是在下面学习了一个开源的项目，里面能够学习的东西还是蛮多的，在这里做一下总结。 项目地址Group6ChatRoom QT环境配置嵌入式项目，要求程序可以在Linux上面可以跑，选择使用Qt，C++毕竟是面向对象的编程语言，用来封装方法还是很方便的。系统使用的是deepin，深度商店还是比较方便的直接下载Qt Creator，环境配置比GTK+省略了不少东西。项目">
+<meta property="og:description" content="期末大作业是要做一个网络聊天室，于是学习了一个开源的项目，里面能够学习的东西还是蛮多的，在这里做一下总结。 项目地址Group6ChatRoom QT环境配置嵌入式项目，要求程序可以在Linux上面可以跑，选择使用Qt，C++毕竟是面向对象的编程语言，用来封装方法还是很方便的。系统使用的是deepin，深度商店还是比较方便的直接下载Qt Creator，环境配置比GTK+省略了不少东西。项目.pr">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-01T12:04:20.729Z">
+<meta property="og:updated_time" content="2019-01-02T12:37:06.573Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="QTcpServer 总结">
-<meta name="twitter:description" content="期末大作业是要做一个网络聊天室，于是在下面学习了一个开源的项目，里面能够学习的东西还是蛮多的，在这里做一下总结。 项目地址Group6ChatRoom QT环境配置嵌入式项目，要求程序可以在Linux上面可以跑，选择使用Qt，C++毕竟是面向对象的编程语言，用来封装方法还是很方便的。系统使用的是deepin，深度商店还是比较方便的直接下载Qt Creator，环境配置比GTK+省略了不少东西。项目">
+<meta name="twitter:description" content="期末大作业是要做一个网络聊天室，于是学习了一个开源的项目，里面能够学习的东西还是蛮多的，在这里做一下总结。 项目地址Group6ChatRoom QT环境配置嵌入式项目，要求程序可以在Linux上面可以跑，选择使用Qt，C++毕竟是面向对象的编程语言，用来封装方法还是很方便的。系统使用的是deepin，深度商店还是比较方便的直接下载Qt Creator，环境配置比GTK+省略了不少东西。项目.pr">
 
 
 
@@ -405,7 +405,7 @@
       
 
       
-        <p>期末大作业是要做一个网络聊天室，于是在下面学习了一个开源的项目，里面能够学习的东西还是蛮多的，在这里做一下总结。</p>
+        <p>期末大作业是要做一个网络聊天室，于是学习了一个开源的项目，里面能够学习的东西还是蛮多的，在这里做一下总结。</p>
 <h2 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a>项目地址</h2><p><a href="https://github.com/bjdlbg/Qt-Group6ChatRoom" target="_blank" rel="noopener">Group6ChatRoom</a></p>
 <h2 id="QT环境配置"><a href="#QT环境配置" class="headerlink" title="QT环境配置"></a>QT环境配置</h2><p>嵌入式项目，要求程序可以在Linux上面可以跑，选择使用Qt，C++毕竟是面向对象的编程语言，用来封装方法还是很方便的。<br>系统使用的是deepin，深度商店还是比较方便的直接下载Qt Creator，环境配置比GTK+省略了不少东西。<br>项目.pro中添加support<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 对网络请求必须加上network</span><br><span class="line">QT       += core gui network</span><br></pre></td></tr></table></figure></p>
 <h2 id="QTcpServer用法总结"><a href="#QTcpServer用法总结" class="headerlink" title="QTcpServer用法总结"></a>QTcpServer用法总结</h2><h3 id="头函数需要添加库文件"><a href="#头函数需要添加库文件" class="headerlink" title="头函数需要添加库文件"></a>头函数需要添加库文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;QTcpSocket&gt;</span><br><span class="line">#include &lt;QTcpServer&gt;</span><br></pre></td></tr></table></figure>
