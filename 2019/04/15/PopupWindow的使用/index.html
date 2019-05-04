@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script>
+    (function () {
+        if ('') {
+            if (prompt('请输入文章密码') !== '') {
+                alert('密码错误！');
+                if (history.length === 1) {
+                    location.replace("http://bjdlbg.github.io"); // 这里替换成你的首页
+                } else {
+                    history.back();
+                }
+            }
+        }
+    })();
+</script>
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Android,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="自从开学以来，有一段时间没有更新博客了，所以这两天打算把一些东西重拾一下然后做一下总结。  PopupWindow这是一个一旦使用就会喜欢上的一个控件，使用官方的话先来介绍一下这个东西，他是一个弹出窗口“该类可以用于显示任意视图的弹出窗口。弹出窗口是一个浮动容器，显示在当前活动顶部”，但是这个控件相对于dialog的好处是可以自定义其中的内容，没有标题，不是给其他布局添加蒙层效果，而且它默认不会">
+<meta name="keywords" content="Android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PopupWindow的使用">
+<meta property="og:url" content="http://yoursite.com/2019/04/15/PopupWindow的使用/index.html">
+<meta property="og:site_name" content="忘我">
+<meta property="og:description" content="自从开学以来，有一段时间没有更新博客了，所以这两天打算把一些东西重拾一下然后做一下总结。  PopupWindow这是一个一旦使用就会喜欢上的一个控件，使用官方的话先来介绍一下这个东西，他是一个弹出窗口“该类可以用于显示任意视图的弹出窗口。弹出窗口是一个浮动容器，显示在当前活动顶部”，但是这个控件相对于dialog的好处是可以自定义其中的内容，没有标题，不是给其他布局添加蒙层效果，而且它默认不会">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-05-04T13:36:03.324Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PopupWindow的使用">
+<meta name="twitter:description" content="自从开学以来，有一段时间没有更新博客了，所以这两天打算把一些东西重拾一下然后做一下总结。  PopupWindow这是一个一旦使用就会喜欢上的一个控件，使用官方的话先来介绍一下这个东西，他是一个弹出窗口“该类可以用于显示任意视图的弹出窗口。弹出窗口是一个浮动容器，显示在当前活动顶部”，但是这个控件相对于dialog的好处是可以自定义其中的内容，没有标题，不是给其他布局添加蒙层效果，而且它默认不会">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/04/15/PopupWindow的使用/">
+
+
+
+
+
+  <title>PopupWindow的使用 | 忘我</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">忘我</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不在梅边在柳边，忘了时间忘了我。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/15/PopupWindow的使用/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jeremy.Ji">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/xiaoren.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="忘我">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">PopupWindow的使用</h1>
+        
+
+        <div class="post-meta">
+          
+
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-15T12:09:45+08:00">
+                2019-04-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.6k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  7
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>自从开学以来，有一段时间没有更新博客了，所以这两天打算把一些东西重拾一下然后做一下总结。</p>
+</blockquote>
+<h1 id="PopupWindow"><a href="#PopupWindow" class="headerlink" title="PopupWindow"></a>PopupWindow</h1><p>这是一个一旦使用就会喜欢上的一个控件，使用官方的话先来介绍一下这个东西，他是一个弹出窗口“该类可以用于显示任意视图的弹出窗口。弹出窗口是一个浮动容器，显示在当前活动顶部”，但是这个控件相对于dialog的好处是可以自定义其中的内容，没有标题，不是给其他布局添加蒙层效果，而且它默认不会响应返回键，最重要的是可以自定义他的位置，而且十分的灵活。<br>先给出：<a href="http://www.android-doc.com/reference/android/widget/PopupWindow.html" target="_blank" rel="noopener">官方文档</a></p>
+<h3 id="首先需要创建"><a href="#首先需要创建" class="headerlink" title="首先需要创建"></a>首先需要创建</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//参数列表有多种，可以传入自定义的contentView，设置宽高，是否可点击等</span><br><span class="line">View contentView = LayoutInflater.from(MainActivity.this).inflate(R.layout.pop,null);</span><br><span class="line">PopupWindwo popWnd = PopupWindow (context);</span><br><span class="line">popWnd.setContentView(contentView);</span><br><span class="line">popWnd.setWidth(ViewGroup.LayoutParams.WRAP_CONTENT);</span><br><span class="line">popWnd.setHeight(ViewGroup.LayoutParams.WRAP_CONTENT)；</span><br></pre></td></tr></table></figure>
+<h3 id="设置显示的方法"><a href="#设置显示的方法" class="headerlink" title="设置显示的方法"></a>设置显示的方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//显示窗口（相对于参照物控件，下方自定义位置，xy分贝表两轴的偏移量）</span><br><span class="line">showAsDropDown(View anchor,int xoff,int yoff)</span><br><span class="line">//显示在正下方</span><br><span class="line">showAsDropDown(View anchor)</span><br><span class="line">//相对于参照物的位置</span><br><span class="line">showAtLocation(View parent, int gravity, int x, int )</span><br></pre></td></tr></table></figure>
+<h3 id="常用的公用方法"><a href="#常用的公用方法" class="headerlink" title="常用的公用方法"></a>常用的公用方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.dismiss()//关闭弹窗</span><br><span class="line">.setFocusable()//设置是否可以获取焦点</span><br><span class="line">.setTouchable()//是否可以点击</span><br><span class="line">.setContentView()//设置内容</span><br><span class="line">....</span><br><span class="line">还有一些获取宽高，更新视图的一些方法可以参照官方文档。</span><br></pre></td></tr></table></figure>
+<p>这两天发现一个比较好用的<a href="https://github.com/pinguo-zhouwei/CustomPopwindow" target="_blank" rel="noopener">开源控件</a>，设置起来更是十分方便。</p>
+<h1 id="结合RecyclerView的使用"><a href="#结合RecyclerView的使用" class="headerlink" title="结合RecyclerView的使用"></a>结合RecyclerView的使用</h1><p>由于项目需要在一个Recyclerview列表中实现一个类似qq聊天长按删除的一个效果，并且有一些总结。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//声明接口，接口方式耦合度低</span><br><span class="line">    /**item上控件点击监听*/</span><br><span class="line">    public interface ItemEditTextClickListener&#123;</span><br><span class="line">        void onWordListEdtClick(int position);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="适配器中"><a href="#适配器中" class="headerlink" title="适配器中"></a>适配器中</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">//声明接口</span><br><span class="line">private ItemEditTextClickListener mEditTextClickListener;</span><br><span class="line"></span><br><span class="line">//onbindViewHolder中绑定监听事件</span><br><span class="line"> //询问线索情况气泡弹出的点击事件</span><br><span class="line">        holder.wcEditText.setOnClickListener(new View.OnClickListener() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void onClick(View v) &#123;</span><br><span class="line">                mEditTextClickListener.onWordListEdtClick(position);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">//并在适配器中提供对外的调用</span><br><span class="line">    /**点击Edt监听对外调用*/</span><br><span class="line">    public void setEditTextClickListener(GameWord.ItemEditTextClickListener itemEditTextClickListener)&#123;</span><br><span class="line">        mEditTextClickListener=itemEditTextClickListener;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Activity中"><a href="#Activity中" class="headerlink" title="Activity中"></a>Activity中</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">private CustomPopWindow mCustomPopWindow;//本次使用的开源框架</span><br><span class="line"></span><br><span class="line">//onCreate()中</span><br><span class="line">//设置Edt的监听</span><br><span class="line">        adapter.setEditTextClickListener(this);</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">     * 点击之后弹出popupwindow</span><br><span class="line">     * */</span><br><span class="line">    @Override</span><br><span class="line">    public void onWordListEdtClick(int position) &#123;</span><br><span class="line">        Log.d(&quot;MakeGameActivity&quot;,&quot;On Edt click&quot;);</span><br><span class="line">        View contentView = LayoutInflater.from(this).inflate(R.layout.pop_menu,null);</span><br><span class="line">        //找到当前position对应的item</span><br><span class="line">        View view=mlayoutManager.findViewByPosition(position);</span><br><span class="line">        //构造popwindow</span><br><span class="line">        mCustomPopWindow = new CustomPopWindow.PopupWindowBuilder(this)</span><br><span class="line">                .setFocusable(true)</span><br><span class="line">                .setView(contentView)</span><br><span class="line">                .setOutsideTouchable(true)</span><br><span class="line">                .create()</span><br><span class="line">                .showAsDropDown(view,500,-580);</span><br><span class="line">        //添加弹框的点击事件</span><br><span class="line">        popupClick(contentView,position);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">/**气泡中的item点击事件*/</span><br><span class="line">    private void popupClick(View contentView,final int position)&#123;</span><br><span class="line"></span><br><span class="line">        final GameWord gameWord=gameWordList.get(position);</span><br><span class="line">        //获取到EditText</span><br><span class="line">        View layout=(View)recyclerView.getChildAt(position);</span><br><span class="line">        final AutoCompleteTextView autoCompleteTextView=layout.findViewById(R.id.word_clue_edit_view);</span><br><span class="line">        View.OnClickListener listener=new View.OnClickListener() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void onClick(View v) &#123;</span><br><span class="line">                if (mCustomPopWindow!=null)&#123;</span><br><span class="line">                    mCustomPopWindow.dissmiss();</span><br><span class="line">                &#125;</span><br><span class="line">                String showContent=&quot;&quot;;</span><br><span class="line">                switch (v.getId())&#123;</span><br><span class="line">                    case R.id.first_menu:</span><br><span class="line">                        autoCompleteTextView.setText(&quot;1&quot;);</span><br><span class="line">                        break;</span><br><span class="line">                    case R.id.second_menu:</span><br><span class="line">                        autoCompleteTextView.setText(&quot;2&quot;);</span><br><span class="line">                        break;</span><br><span class="line">                    case R.id.third_menu:</span><br><span class="line">                        showContent=&quot;点击菜单三&quot;;</span><br><span class="line">                        break;</span><br><span class="line">                    case R.id.forth_menu:</span><br><span class="line">                        showContent=&quot;点击菜单四&quot;;</span><br><span class="line">                        break;</span><br><span class="line">                        default:break;</span><br><span class="line">                &#125;              //Toast.makeText(MakeGameActivity.this,showContent,Toast.LENGTH_SHORT).show();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        //为四个litm绑定监听</span><br><span class="line">        contentView.findViewById(R.id.first_menu).setOnClickListener(listener);</span><br><span class="line">        contentView.findViewById(R.id.second_menu).setOnClickListener(listener);</span><br><span class="line">        contentView.findViewById(R.id.third_menu).setOnClickListener(listener);</span><br><span class="line">        contentView.findViewById(R.id.forth_menu).setOnClickListener(listener);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="最后是popupWindow的布局可以自定义设计。"><a href="#最后是popupWindow的布局可以自定义设计。" class="headerlink" title="最后是popupWindow的布局可以自定义设计。"></a>最后是popupWindow的布局可以自定义设计。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line">    android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    android:layout_height=&quot;match_parent&quot;</span><br><span class="line">    android:background=&quot;@color/colorFabIcon&quot;</span><br><span class="line">    android:orientation=&quot;vertical&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;LinearLayout</span><br><span class="line">        android:id=&quot;@+id/first_menu&quot;</span><br><span class="line">        android:layout_width=&quot;match_parent&quot;</span><br><span class="line">        android:layout_height=&quot;40dp&quot;</span><br><span class="line">        android:orientation=&quot;horizontal&quot;&gt;</span><br><span class="line">        &lt;ImageView</span><br><span class="line">            android:layout_width=&quot;35dp&quot;</span><br><span class="line">            android:layout_height=&quot;35dp&quot;</span><br><span class="line">            android:padding=&quot;5dp&quot;</span><br><span class="line">            android:src=&quot;@drawable/clues&quot; /&gt;</span><br><span class="line">        &lt;TextView</span><br><span class="line">            android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">            android:layout_height=&quot;35dp&quot;</span><br><span class="line">            android:gravity=&quot;center&quot;</span><br><span class="line">            android:paddingLeft=&quot;20dp&quot;</span><br><span class="line">            android:paddingRight=&quot;40dp&quot;</span><br><span class="line">            android:text=&quot;添加中文&quot; /&gt;</span><br><span class="line">    &lt;/LinearLayout&gt;</span><br><span class="line">    &lt;LinearLayout</span><br><span class="line">        android:id=&quot;@+id/second_menu&quot;</span><br><span class="line">        android:layout_width=&quot;match_parent&quot;</span><br><span class="line">        android:layout_height=&quot;40dp&quot;</span><br><span class="line">        android:orientation=&quot;horizontal&quot;&gt;</span><br><span class="line">        &lt;ImageView</span><br><span class="line">            android:layout_width=&quot;35dp&quot;</span><br><span class="line">            android:layout_height=&quot;35dp&quot;</span><br><span class="line">            android:padding=&quot;5dp&quot;</span><br><span class="line">            android:src=&quot;@drawable/bd_ocr_light_off&quot; /&gt;</span><br><span class="line">        &lt;TextView</span><br><span class="line">            android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">            android:layout_height=&quot;35dp&quot;</span><br><span class="line">            android:gravity=&quot;center&quot;</span><br><span class="line">            android:paddingLeft=&quot;20dp&quot;</span><br><span class="line">            android:paddingRight=&quot;40dp&quot;</span><br><span class="line">            android:text=&quot;添加英文&quot; /&gt;</span><br><span class="line">    &lt;/LinearLayout&gt;</span><br><span class="line">    &lt;LinearLayout</span><br><span class="line">        android:id=&quot;@+id/third_menu&quot;</span><br><span class="line">        android:layout_width=&quot;match_parent&quot;</span><br><span class="line">        android:layout_height=&quot;40dp&quot;</span><br><span class="line">        android:orientation=&quot;horizontal&quot;&gt;</span><br><span class="line">        &lt;ImageView</span><br><span class="line">            android:layout_width=&quot;35dp&quot;</span><br><span class="line">            android:layout_height=&quot;35dp&quot;</span><br><span class="line">            android:padding=&quot;5dp&quot;</span><br><span class="line">            android:src=&quot;@drawable/xiansuo&quot; /&gt;</span><br><span class="line">        &lt;TextView</span><br><span class="line">            android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">            android:layout_height=&quot;35dp&quot;</span><br><span class="line">            android:gravity=&quot;center&quot;</span><br><span class="line">            android:paddingLeft=&quot;20dp&quot;</span><br><span class="line">            android:paddingRight=&quot;40dp&quot;</span><br><span class="line">            android:text=&quot;手动输入&quot; /&gt;</span><br><span class="line">    &lt;/LinearLayout&gt;</span><br><span class="line">    &lt;LinearLayout</span><br><span class="line">        android:id=&quot;@+id/forth_menu&quot;</span><br><span class="line">        android:layout_width=&quot;match_parent&quot;</span><br><span class="line">        android:layout_height=&quot;40dp&quot;</span><br><span class="line">        android:orientation=&quot;horizontal&quot;&gt;</span><br><span class="line">        &lt;ImageView</span><br><span class="line">            android:layout_width=&quot;35dp&quot;</span><br><span class="line">            android:layout_height=&quot;35dp&quot;</span><br><span class="line">            android:padding=&quot;5dp&quot;</span><br><span class="line">            android:src=&quot;@drawable/notebook&quot; /&gt;</span><br><span class="line">        &lt;TextView</span><br><span class="line">            android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">            android:layout_height=&quot;35dp&quot;</span><br><span class="line">            android:gravity=&quot;center&quot;</span><br><span class="line">            android:paddingLeft=&quot;20dp&quot;</span><br><span class="line">            android:paddingRight=&quot;40dp&quot;</span><br><span class="line">            android:text=&quot;取消&quot; /&gt;</span><br><span class="line">    &lt;/LinearLayout&gt;</span><br><span class="line">&lt;/LinearLayout&gt;</span><br></pre></td></tr></table></figure>
+<p>此外还有一线需要总结一下，那就是在外部如何获根据position取到Recyclerview中item的子控件。思路大概就是，首先根据position获取对应的childview。之后通过对应的childView根据id获取到子控件。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//获取到EditText</span><br><span class="line">        View layout=(View)recyclerView.getChildAt(position);</span><br><span class="line">        final AutoCompleteTextView autoCompleteTextView=layout.findViewById(R.id.word_clue_edit_view);</span><br></pre></td></tr></table></figure></p>
+<p>尽量不要给EditText添加点击事件，因为EditText首先会获取到焦点，之后再点击才会触发点击事件。也就是在没有获取到焦点的时候双击才会触发点击事件。一些点击之间的冲突还有待在深入研究一下。还有在设计用户交互的时候尽量不要做一些超越一般用户认知的交互。点击事件尽量使用按钮的形式，不要使用一些其他乱七八糟的东西，比如文本，图片之类的。<br>还有进一步的用户体验，比如在输入完文本自用隐藏软键盘，当需要编辑的时候使用代码为用户自动弹出软键盘。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//强制关闭键盘</span><br><span class="line">InputMethodManager imm = (InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE);</span><br><span class="line">        imm.hideSoftInputFromWindow(activity.getCurrentFocus().getWindowToken(), 0);</span><br><span class="line">//强制显示</span><br><span class="line">InputMethodManager imm = (InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE);</span><br><span class="line">        imm.showSoftInput(activity.getWindow().getDecorView(),InputMethodManager.SHOW_FORCED);</span><br></pre></td></tr></table></figure></p>
+<p>开学是比较忙，一些东西落下了，所以之后会继续坚持做总结。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag"># Android</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/18/Android-共享元素/" rel="next" title="Android-共享元素">
+                <i class="fa fa-chevron-left"></i> Android-共享元素
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/xiaoren.jpg" alt="Jeremy.Ji">
+            
+              <p class="site-author-name" itemprop="name">Jeremy.Ji</p>
+              <p class="site-description motion-element" itemprop="description">Search for the real things in the world</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/bjdlbg" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Recommend
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://material.io/develop/android/" title="Material Design" target="_blank">Material Design</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.iconfont.cn/" title="阿里矢量图标库" target="_blank">阿里矢量图标库</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://developer.android.com/" title="Android Developer" target="_blank">Android Developer</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://stackoverflow.com/" title="stackoverflow" target="_blank">stackoverflow</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#PopupWindow"><span class="nav-number">1.</span> <span class="nav-text">PopupWindow</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#首先需要创建"><span class="nav-number">1.0.1.</span> <span class="nav-text">首先需要创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置显示的方法"><span class="nav-number">1.0.2.</span> <span class="nav-text">设置显示的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用的公用方法"><span class="nav-number">1.0.3.</span> <span class="nav-text">常用的公用方法</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#结合RecyclerView的使用"><span class="nav-number">2.</span> <span class="nav-text">结合RecyclerView的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#适配器中"><span class="nav-number">2.0.1.</span> <span class="nav-text">适配器中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Activity中"><span class="nav-number">2.0.2.</span> <span class="nav-text">Activity中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最后是popupWindow的布局可以自定义设计。"><span class="nav-number">2.0.3.</span> <span class="nav-text">最后是popupWindow的布局可以自定义设计。</span></a></li></ol></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jeremy.Ji</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">15.5k</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

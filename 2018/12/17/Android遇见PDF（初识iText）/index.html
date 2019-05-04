@@ -107,7 +107,7 @@
 <meta property="og:site_name" content="忘我">
 <meta property="og:description" content="最近项目中需要将生成的棋盘打印成PDF格式（一个crossword数独游戏），于是研究了一下Android中pdf的创建 原生PDF库首先说这个原生自带的pdf库，Android6.0之后就支持创建pdf，但是经过对比，原生的这个在打印的灵活性远远不能满足项目需求，首先他有很多优点，比如可以将页面上面现有的view打印出来，还可以将canvas中自己绘画的一些内容打印出来，最重要的就是本身轻量级的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-22T13:17:30.424Z">
+<meta property="og:updated_time" content="2019-01-31T03:11:42.323Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android遇见PDF（初识iText）">
 <meta name="twitter:description" content="最近项目中需要将生成的棋盘打印成PDF格式（一个crossword数独游戏），于是研究了一下Android中pdf的创建 原生PDF库首先说这个原生自带的pdf库，Android6.0之后就支持创建pdf，但是经过对比，原生的这个在打印的灵活性远远不能满足项目需求，首先他有很多优点，比如可以将页面上面现有的view打印出来，还可以将canvas中自己绘画的一些内容打印出来，最重要的就是本身轻量级的">
@@ -368,7 +368,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  491
+                  639
                 </span>
               
 
@@ -384,7 +384,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -413,8 +413,8 @@
 <li>iText7则是iText5的商业版本，对一些高级功能进行限制，它的最低 api版本居然是Android 8.0 有点搞不懂，而且貌似收费，于是放弃。<h3 id="使用iText5打印基本使用"><a href="#使用iText5打印基本使用" class="headerlink" title="使用iText5打印基本使用"></a>使用iText5打印基本使用</h3>获取：gradle中添加如下字段<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//pdf</span><br><span class="line">   implementation &apos;com.itextpdf:itextg:5.5.10&apos;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>基本用法：持续更新中。。。。</p>
-
+<h3 id="适配中文支持"><a href="#适配中文支持" class="headerlink" title="适配中文支持"></a>适配中文支持</h3><p>官方也是给了接口，比如说在Android项目中是可以手动适配字体库的，可以使用微软的字体，windows上面的ttf字体库。在做产品的同时需要考虑到很多因素比如版权的问题，所以尽量做到适配还需要使用Android的字体库。<br>在官网上面扒拉了很多，发现iText5提供了亚洲字体包，所以就采用官方的字体包来适配。</p>
+<h2 id="集成iTExt-5字体包"><a href="#集成iTExt-5字体包" class="headerlink" title="集成iTExt 5字体包"></a>集成iTExt 5字体包</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//iText亚洲字体兼容包</span><br><span class="line">   implementation group: &apos;com.itextpdf&apos;, name: &apos;itext-asian&apos;, version: &apos;5.2.0&apos;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -537,7 +537,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -628,7 +628,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#原生PDF库"><span class="nav-number">1.</span> <span class="nav-text">原生PDF库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iText开源库"><span class="nav-number">2.</span> <span class="nav-text">iText开源库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用iText5打印基本使用"><span class="nav-number">3.</span> <span class="nav-text">使用iText5打印基本使用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#原生PDF库"><span class="nav-number">1.</span> <span class="nav-text">原生PDF库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iText开源库"><span class="nav-number">2.</span> <span class="nav-text">iText开源库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用iText5打印基本使用"><span class="nav-number">3.</span> <span class="nav-text">使用iText5打印基本使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#适配中文支持"><span class="nav-number">4.</span> <span class="nav-text">适配中文支持</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#集成iTExt-5字体包"><span class="nav-number"></span> <span class="nav-text">集成iTExt 5字体包</span></a></li></div>
             
 
           </div>
@@ -667,7 +667,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">13.7k</span>
+    <span title="Site words total count">15.5k</span>
   
 </div>
 
