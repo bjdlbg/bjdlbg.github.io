@@ -99,18 +99,22 @@
 
 
 
-<meta name="description" content="这里记录两个问题 ViewPager内容丢失问题由于之前使用viewPager搭配fragment在然后托管在Activity中可以左右滑动来实现一个卡片滑动的效果。但是这次将他们（ViewPager）托管在一个Fragment中的时候发现在当前fragment中切换时候界面没有问题，一旦切出去另外的NavigationView时候再回来，viewPage中的内容就消失掉了。所以说在fragmen">
+<meta name="description" content="这上半年几家手机厂商可以堪称神仙打架，小米9，iqoo，华为，oppo，三星等等都首发Android P系统。咱也是几经考虑终于换上了新手机，也体验一下这Android9.0（原来是Android6.0.1的一台nubia）。然后迫不及待跑了一下自己写的几个app，这一跑然后就出问题了。  Android 9 wifi传输在Android9上面连接到Pentax相机的wifi时候，但是无法传输文">
 <meta name="keywords" content="Android,网络">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android P 网络请求相关总结">
 <meta property="og:url" content="http://yoursite.com/2019/04/28/Android P网路请求相关/index.html">
 <meta property="og:site_name" content="忘我">
-<meta property="og:description" content="这里记录两个问题 ViewPager内容丢失问题由于之前使用viewPager搭配fragment在然后托管在Activity中可以左右滑动来实现一个卡片滑动的效果。但是这次将他们（ViewPager）托管在一个Fragment中的时候发现在当前fragment中切换时候界面没有问题，一旦切出去另外的NavigationView时候再回来，viewPage中的内容就消失掉了。所以说在fragmen">
+<meta property="og:description" content="这上半年几家手机厂商可以堪称神仙打架，小米9，iqoo，华为，oppo，三星等等都首发Android P系统。咱也是几经考虑终于换上了新手机，也体验一下这Android9.0（原来是Android6.0.1的一台nubia）。然后迫不及待跑了一下自己写的几个app，这一跑然后就出问题了。  Android 9 wifi传输在Android9上面连接到Pentax相机的wifi时候，但是无法传输文">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-04T13:43:18.810Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/13139591-da68dd4ecaea3d62.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/13139591-885a87de6bcedb18.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/13139591-9bce543b6dd9f945.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2019-05-30T11:09:40.553Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android P 网络请求相关总结">
-<meta name="twitter:description" content="这里记录两个问题 ViewPager内容丢失问题由于之前使用viewPager搭配fragment在然后托管在Activity中可以左右滑动来实现一个卡片滑动的效果。但是这次将他们（ViewPager）托管在一个Fragment中的时候发现在当前fragment中切换时候界面没有问题，一旦切出去另外的NavigationView时候再回来，viewPage中的内容就消失掉了。所以说在fragmen">
+<meta name="twitter:description" content="这上半年几家手机厂商可以堪称神仙打架，小米9，iqoo，华为，oppo，三星等等都首发Android P系统。咱也是几经考虑终于换上了新手机，也体验一下这Android9.0（原来是Android6.0.1的一台nubia）。然后迫不及待跑了一下自己写的几个app，这一跑然后就出问题了。  Android 9 wifi传输在Android9上面连接到Pentax相机的wifi时候，但是无法传输文">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/13139591-da68dd4ecaea3d62.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -368,7 +372,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  365
+                  1k
                 </span>
               
 
@@ -384,7 +388,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  4
                 </span>
               
             </div>
@@ -405,11 +409,30 @@
       
 
       
-        <p>这里记录两个问题</p>
-<h3 id="ViewPager内容丢失问题"><a href="#ViewPager内容丢失问题" class="headerlink" title="ViewPager内容丢失问题"></a>ViewPager内容丢失问题</h3><p>由于之前使用viewPager搭配fragment在然后托管在Activity中可以左右滑动来实现一个卡片滑动的效果。<br>但是这次将他们（ViewPager）托管在一个Fragment中的时候发现在当前fragment中切换时候界面没有问题，一旦切出去另外的NavigationView时候再回来，viewPage中的内容就消失掉了。<br>所以说在fragment中使用Switch来切换viewPager切换时候应该使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">如果需要显示的界面并不是很多的情况下可以使用FragmentStatePagerAdapter来代替FragmentPagerAdapter虽然两个都是继承PagerAdapter，但是前者可以回收pager中的view，切换时候再刷新，这样在相对动态的界面可以保证数据的最新而不会丢失视图。</span><br></pre></td></tr></table></figure></p>
-<h3 id="设置全屏显示失效问题"><a href="#设置全屏显示失效问题" class="headerlink" title="设置全屏显示失效问题"></a>设置全屏显示失效问题</h3><p> 一般情况可以在andrmainfest文件中application对应的属性下添加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android:theme=&quot;@android:style/Theme.NoTitleBar.Fullscreen&quot;</span><br></pre></td></tr></table></figure></p>
-<p>还可以在活动中onCreate（）函数中使用，但是要在setContentView（）之前使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">this.requestWindowFeature(Window.FEATURE_NO_TITLE);// 去标题栏 </span><br><span class="line">getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);// 去掉Activity上面的状态栏</span><br></pre></td></tr></table></figure></p>
-<p>然后当我这样设置的时候发现并没有去掉app标题，这样的原因来自于v4和v7两个包的问题。activity继承了AppComPatActiviry，属于v7包，可以将其改为Activity。还有可以使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//v7包下去除标题栏代码：</span><br><span class="line">getSupportActionBar().hide();   </span><br><span class="line">getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);</span><br></pre></td></tr></table></figure></p>
+        <blockquote>
+<p>这上半年几家手机厂商可以堪称神仙打架，小米9，iqoo，华为，oppo，三星等等都首发Android P系统。咱也是几经考虑终于换上了新手机，也体验一下这Android9.0（原来是Android6.0.1的一台nubia）。然后迫不及待跑了一下自己写的几个app，这一跑然后就出问题了。</p>
+</blockquote>
+<h2 id="Android-9-wifi传输"><a href="#Android-9-wifi传输" class="headerlink" title="Android 9 wifi传输"></a>Android 9 wifi传输</h2><p>在Android9上面连接到Pentax相机的wifi时候，但是无法传输文件，无法获取单反sd卡的缩略图等。<br>会报错<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">No Network Security Config specified, using platform default</span><br></pre></td></tr></table></figure></p>
+<p>后来通过查阅官网，发现Google在Android P上面禁止了明文http传输，也就是默认的是使用https而不是http。而且官方也是给出了解决方案。可以参考<a href="[https://developer.android.com/training/articles/security-config#top_of_page](https://developer.android.com/training/articles/security-config#top_of_page">官方详情</a><br>)，我在这里简单总结一下</p>
+<ol>
+<li>添加安全配置文件<br>首先在res/xml文件夹下创建文件network_security_config.xml文件,然后添加可以信任的域名或者ip<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;network-security-config&gt;</span><br><span class="line">    &lt;domain-config&gt;</span><br><span class="line">        &lt;domain includeSubdomains=&quot;true&quot;&gt;example.com&lt;/domain&gt;</span><br><span class="line">    &lt;/domain-config&gt;</span><br><span class="line">&lt;/network-security-config&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>或者添加<base-config cleartexttrafficpermitted="true">默认可以使用明文传输。<br>之后在AndroidMainfest.xml中application下添加下面属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android:networkSecurityConfig=&quot;@xml/network_security_config&quot;</span><br></pre></td></tr></table></figure></base-config></p>
+<ol start="2">
+<li>降低api版本，在27或者以下都可以使用明文http传输。但是作为开发者这样是没有太大意义的。<h2 id="访问自己搭建的后台"><a href="#访问自己搭建的后台" class="headerlink" title="访问自己搭建的后台"></a>访问自己搭建的后台</h2>另一个项目是通过Android访问自己搭建的web服务器。同样会出现报错，通过上面的两种方法是可以解决问题的。这里还有第三种方法，那就是手动添加ssl证书<ol start="3">
+<li>spring boot配置ssl证书实现https访问<br>可以使用java自带的证书生成工具来实现，首先打开cmd终端，输入命令来产生ssl证书<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">keytool -list -keystore server.p12</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ol>
+<p>之后会提示输入不少于六位的密码，之后还需要重复输入，以及填写其他信息等。按照步骤来就行，关键就是要记住密码。<br>spring boot中在配置文件application.properties中添加几条配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#需吧生成的文件放在与配置文件相同目录下</span><br><span class="line">#server.ssl.key-store=classpath:keystore.p12</span><br><span class="line">#配置证书密码</span><br><span class="line">#server.ssl.key-store-password=111111 </span><br><span class="line">##server.ssl.keyStoreType=PKCS12</span><br><span class="line">#可以手动指定端口，否则使用默认的8443端口</span><br><span class="line">#server.ssl.keyAlias:tomcat</span><br></pre></td></tr></table></figure></p>
+<p>之后重启项目可以看见服务端!<br><img src="https://upload-images.jianshu.io/upload_images/13139591-da68dd4ecaea3d62.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>由于证书是自己创建的所以肯定为无效证书<br><img src="https://upload-images.jianshu.io/upload_images/13139591-885a87de6bcedb18.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h2 id="添加证书的信任"><a href="#添加证书的信任" class="headerlink" title="添加证书的信任"></a>添加证书的信任</h2><p>之后我使用java跑测试时候又报了这样的错误<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">avax.net.ssl.SSLHandshakeException: java.security.cert.CertificateException: No subject alternative names present</span><br></pre></td></tr></table></figure></p>
+<p>这样是因为添加完https之后如果使用java.net或者Android进行访问的话还是需要添加信任<br>java应用的话需要将证书添加到支持。可以从网站下载二进制文件。首先点击上图的证书之后点击复制到文件<br><img src="https://upload-images.jianshu.io/upload_images/13139591-9bce543b6dd9f945.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>之后点击下一步，选择der文件格式的证书。<br>使用该命令可以导入到本地的cacerts证书库<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">keytool -import -alias vbooking -keystore cacerts -file $&#123;JAVA_HOME&#125;/jre/lib/security/vbooking.cer</span><br></pre></td></tr></table></figure></p>
+<p>之后不管是在本地跑java测试还是，用到java.net.HttpURLConnection本地是不会报错的。<br>Android端的话在网络安全配置文件中res/raw/my_ca中添加刚才生成的DER格式证书。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;network-security-config&gt;</span><br><span class="line">    &lt;domain-config&gt;</span><br><span class="line">        &lt;domain includeSubdomains=&quot;true&quot;&gt;example.com&lt;/domain&gt;</span><br><span class="line">        &lt;trust-anchors&gt;</span><br><span class="line">            &lt;certificates src=&quot;@raw/my_ca&quot;/&gt;</span><br><span class="line">        &lt;/trust-anchors&gt;</span><br><span class="line">    &lt;/domain-config&gt;</span><br><span class="line">&lt;/network-security-config&gt;</span><br></pre></td></tr></table></figure></p>
+<p>其中需要注意的一点就是，在Android端使用网路请求时候不能在ui主线程中使用网络请求，应该在AsyncTask中来调用，关于AsyncTask的使用之前也总结过。<br>另外一点是需要在添加网络请求权限<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;uses-permission android:name=&quot;android.permission.INTERNET&quot;/&gt;</span><br><span class="line">    &lt;uses-permission android:name=&quot;android.permission.ACCESS_NETWORK_STATE&quot; /&gt;</span><br><span class="line">    &lt;uses-permission android:name=&quot;android.permission.ACCESS_WIFI_STATE&quot; /&gt;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -620,7 +643,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#ViewPager内容丢失问题"><span class="nav-number">1.</span> <span class="nav-text">ViewPager内容丢失问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置全屏显示失效问题"><span class="nav-number">2.</span> <span class="nav-text">设置全屏显示失效问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-9-wifi传输"><span class="nav-number">1.</span> <span class="nav-text">Android 9 wifi传输</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#访问自己搭建的后台"><span class="nav-number">2.</span> <span class="nav-text">访问自己搭建的后台</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加证书的信任"><span class="nav-number">3.</span> <span class="nav-text">添加证书的信任</span></a></li></ol></div>
             
 
           </div>
@@ -659,7 +682,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">16.2k</span>
+    <span title="Site words total count">16.9k</span>
   
 </div>
 
