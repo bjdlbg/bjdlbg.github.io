@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script>
+    (function () {
+        if ('') {
+            if (prompt('请输入文章密码') !== '') {
+                alert('密码错误！');
+                if (history.length === 1) {
+                    location.replace("http://bjdlbg.github.io"); // 这里替换成你的首页
+                } else {
+                    history.back();
+                }
+            }
+        }
+    })();
+</script>
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="性能优化,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="期末考试完了，大学阶段最后一次考试，也是最后一个暑假了。也有一段时间没有总结了，今天总结一个界面性能优化的方法  需求是，将整个页面当成一个整体可以上下滑动，该布局由上下两段组成（上面的两个输入框和一个相对布局，下面是一个RecyclerView），放到一个NestedScrollView中形成可以上下滑动的整体布局。这样有个弊端，当RecyclerView中的数据比较多的时候比如超过五十条it">
+<meta name="keywords" content="性能优化">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SwipRecyclerView解决NestScorllingView滑动卡顿">
+<meta property="og:url" content="http://yoursite.com/2019/07/17/SwipRecyclerView/index.html">
+<meta property="og:site_name" content="忘我">
+<meta property="og:description" content="期末考试完了，大学阶段最后一次考试，也是最后一个暑假了。也有一段时间没有总结了，今天总结一个界面性能优化的方法  需求是，将整个页面当成一个整体可以上下滑动，该布局由上下两段组成（上面的两个输入框和一个相对布局，下面是一个RecyclerView），放到一个NestedScrollView中形成可以上下滑动的整体布局。这样有个弊端，当RecyclerView中的数据比较多的时候比如超过五十条it">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://i.loli.net/2019/07/17/5d2e7d4e241de47676.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/07/17/5d2e8f9406ec328221.png">
+<meta property="og:updated_time" content="2019-07-17T03:06:24.436Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SwipRecyclerView解决NestScorllingView滑动卡顿">
+<meta name="twitter:description" content="期末考试完了，大学阶段最后一次考试，也是最后一个暑假了。也有一段时间没有总结了，今天总结一个界面性能优化的方法  需求是，将整个页面当成一个整体可以上下滑动，该布局由上下两段组成（上面的两个输入框和一个相对布局，下面是一个RecyclerView），放到一个NestedScrollView中形成可以上下滑动的整体布局。这样有个弊端，当RecyclerView中的数据比较多的时候比如超过五十条it">
+<meta name="twitter:image" content="https://i.loli.net/2019/07/17/5d2e7d4e241de47676.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/07/17/SwipRecyclerView/">
+
+
+
+
+
+  <title>SwipRecyclerView解决NestScorllingView滑动卡顿 | 忘我</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">忘我</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不在梅边在柳边，忘了时间忘了我。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/17/SwipRecyclerView/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jeremy.Ji">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/xiaoren.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="忘我">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">SwipRecyclerView解决NestScorllingView滑动卡顿</h1>
+        
+
+        <div class="post-meta">
+          
+
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-17T11:06:38+08:00">
+                2019-07-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.6k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  7
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>期末考试完了，大学阶段最后一次考试，也是最后一个暑假了。也有一段时间没有总结了，今天总结一个界面性能优化的方法</p>
+</blockquote>
+<p>需求是，将整个页面当成一个整体可以上下滑动，该布局由上下两段组成（上面的两个输入框和一个相对布局，下面是一个RecyclerView），放到一个NestedScrollView中形成可以上下滑动的整体布局。这样有个弊端，当RecyclerView中的数据比较多的时候比如超过五十条item，那么整体滑动起来会变得非常卡顿，基本就是手指离开滚动就停止。</p>
+<h3 id="先上布局图片："><a href="#先上布局图片：" class="headerlink" title="先上布局图片："></a>先上布局图片：</h3><p><img src="https://i.loli.net/2019/07/17/5d2e7d4e241de47676.jpg" alt="Screenshot_20190717_093039.jpg"></p>
+<h3 id="布局代码"><a href="#布局代码" class="headerlink" title="布局代码"></a>布局代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line">&lt;android.support.v4.widget.NestedScrollView</span><br><span class="line">    android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    android:layout_height=&quot;match_parent&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;LinearLayout</span><br><span class="line">        android:layout_width=&quot;match_parent&quot;</span><br><span class="line">        android:layout_height=&quot;match_parent&quot;</span><br><span class="line">        android:orientation=&quot;vertical&quot;&gt;</span><br><span class="line"></span><br><span class="line">        &lt;LinearLayout</span><br><span class="line">            android:layout_width=&quot;match_parent&quot;</span><br><span class="line">            android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">            android:layout_marginHorizontal=&quot;16dp&quot;</span><br><span class="line">            android:orientation=&quot;vertical&quot;&gt;</span><br><span class="line"></span><br><span class="line">            &lt;android.support.design.widget.TextInputLayout</span><br><span class="line">                android:layout_width=&quot;match_parent&quot;</span><br><span class="line">                android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">                android:paddingTop=&quot;8dp&quot;&gt;</span><br><span class="line"></span><br><span class="line">                &lt;EditText</span><br><span class="line">                    android:id=&quot;@+id/book_name_edit&quot;</span><br><span class="line">                    android:layout_width=&quot;match_parent&quot;</span><br><span class="line">                    android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">                    android:hint=&quot;@string/book_title&quot; /&gt;</span><br><span class="line"></span><br><span class="line">            &lt;/android.support.design.widget.TextInputLayout&gt;</span><br><span class="line"></span><br><span class="line">            &lt;android.support.design.widget.TextInputLayout</span><br><span class="line">                android:layout_width=&quot;match_parent&quot;</span><br><span class="line">                android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">                android:paddingTop=&quot;16dp&quot;&gt;</span><br><span class="line"></span><br><span class="line">                &lt;EditText</span><br><span class="line">                    android:id=&quot;@+id/book_introduction_edit&quot;</span><br><span class="line">                    android:layout_width=&quot;match_parent&quot;</span><br><span class="line">                    android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">                    android:hint=&quot;@string/book_instruction&quot; /&gt;</span><br><span class="line"></span><br><span class="line">            &lt;/android.support.design.widget.TextInputLayout&gt;</span><br><span class="line">        &lt;/LinearLayout&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        &lt;RelativeLayout</span><br><span class="line">            android:layout_width=&quot;match_parent&quot;</span><br><span class="line">            android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">            android:layout_marginHorizontal=&quot;16dp&quot;</span><br><span class="line">            android:layout_marginVertical=&quot;8dp&quot;&gt;</span><br><span class="line"></span><br><span class="line">            &lt;TextView</span><br><span class="line">                android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">                android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">                android:layout_alignParentLeft=&quot;true&quot;</span><br><span class="line">                android:text=&quot;@string/word_list&quot;</span><br><span class="line">                android:textAppearance=&quot;@style/TextAppearance.AppCompat.Medium&quot;</span><br><span class="line">                android:textColor=&quot;#000&quot; /&gt;</span><br><span class="line"></span><br><span class="line">            &lt;Button</span><br><span class="line">                android:id=&quot;@+id/translate_btn&quot;</span><br><span class="line">                android:layout_width=&quot;24dp&quot;</span><br><span class="line">                android:layout_height=&quot;24dp&quot;</span><br><span class="line">                android:layout_alignParentRight=&quot;true&quot;</span><br><span class="line">                android:layout_marginRight=&quot;0dp&quot;</span><br><span class="line"></span><br><span class="line">                android:background=&quot;@drawable/ic_translate_black_30dp&quot;</span><br><span class="line">                android:focusable=&quot;false&quot;</span><br><span class="line">                android:onClick=&quot;TranslateClick&quot;</span><br><span class="line">                android:padding=&quot;12dp&quot; /&gt;</span><br><span class="line"></span><br><span class="line">        &lt;/RelativeLayout&gt;</span><br><span class="line"></span><br><span class="line">        &lt;android.support.v7.widget.RecyclerView</span><br><span class="line">            android:id=&quot;@+id/edit_book_recyclerView&quot;</span><br><span class="line">            android:layout_width=&quot;match_parent&quot;</span><br><span class="line">            android:layout_height=&quot;wrap_content&quot; /&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/LinearLayout&gt;</span><br><span class="line">&lt;/android.support.v4.widget.NestedScrollView&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="之前的解决方案"><a href="#之前的解决方案" class="headerlink" title="之前的解决方案"></a>之前的解决方案</h3><p>在网上查阅了很多网友总结的解决方案比如设置他的两条属性：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">recyclerView.setHasFixedSize(true);</span><br><span class="line">recyclerView.setNestedScrollingEnabled(false);</span><br></pre></td></tr></table></figure></p>
+<p>一条是让item的尺寸大小收到adapter影响，一个是关闭Recyclerview的滑动，使用scrolview来进行滑动，这样当数据量小的时候确实可以做到滑动平滑。<br>这样的属性一旦item数目较大（亲测超过50个时候）就会变得卡顿，尤其是拉倒最底部然后再向上滑动时候，出现卡顿，FPS可谓十分低，更不用说让用户和item交互了进行文本输入以及其他交互了。<br>这样的原理是，当下拉加载时候将item全部都加载完毕，然后将布局作为一个整体来上下滑动，这完全牺牲了RecyclerView原本的自动回收机制，数据多仍使得性能低下。</p>
+<h3 id="我的解决方案"><a href="#我的解决方案" class="headerlink" title="我的解决方案"></a>我的解决方案</h3><p>既然想让整体上下滑动，又要有RecyclerView的自动回收机制，那么就使用一个控件来解决需求即可。将Recyclerview作为滑动的控件，将上部分作为一个整体当成一个item，作为headerView加在Recyclerview的头部。这样一来，整体就是一个高性能的Recyclerview了，而且布局样式一点都没有收到影响。如图：<br><img src="https://i.loli.net/2019/07/17/5d2e8f9406ec328221.png" alt="headerView部分.png"></p>
+<p>我使用的是严振杰大佬的开源控件SwipRecyclerView，地址为：<a href="https://github.com/yanzhenjie/SwipeRecyclerView" target="_blank" rel="noopener">SwipeRecyclerView</a></p>
+<ul>
+<li><p>首先需要将控件集成到项目</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//多功能的RecyclerView</span><br><span class="line">   implementation &apos;com.yanzhenjie.recyclerview:support:1.3.2&apos;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改后的布局代码<br>红框内的布局，单独创建一个新布局文件header_layout.xml，将之前布局上方部分抠出来单独放进去即可。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line">&lt;LinearLayout</span><br><span class="line">    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line">        android:layout_width=&quot;match_parent&quot;</span><br><span class="line">        android:layout_height=&quot;match_parent&quot;</span><br><span class="line">        android:orientation=&quot;vertical&quot;&gt;</span><br><span class="line"></span><br><span class="line">        &lt;LinearLayout</span><br><span class="line">            android:layout_width=&quot;match_parent&quot;</span><br><span class="line">            android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">            android:layout_marginHorizontal=&quot;16dp&quot;</span><br><span class="line">            android:orientation=&quot;vertical&quot;&gt;</span><br><span class="line"></span><br><span class="line">            &lt;android.support.design.widget.TextInputLayout</span><br><span class="line">                android:layout_width=&quot;match_parent&quot;</span><br><span class="line">                android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">                android:paddingTop=&quot;8dp&quot;&gt;</span><br><span class="line"></span><br><span class="line">                &lt;EditText</span><br><span class="line">                    android:id=&quot;@+id/book_name_edit&quot;</span><br><span class="line">                    android:layout_width=&quot;match_parent&quot;</span><br><span class="line">                    android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">                    android:hint=&quot;@string/book_title&quot; /&gt;</span><br><span class="line"></span><br><span class="line">            &lt;/android.support.design.widget.TextInputLayout&gt;</span><br><span class="line"></span><br><span class="line">            &lt;android.support.design.widget.TextInputLayout</span><br><span class="line">                android:layout_width=&quot;match_parent&quot;</span><br><span class="line">                android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">                android:paddingTop=&quot;16dp&quot;&gt;</span><br><span class="line"></span><br><span class="line">                &lt;EditText</span><br><span class="line">                    android:id=&quot;@+id/book_introduction_edit&quot;</span><br><span class="line">                    android:layout_width=&quot;match_parent&quot;</span><br><span class="line">                    android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">                    android:hint=&quot;@string/book_instruction&quot; /&gt;</span><br><span class="line"></span><br><span class="line">            &lt;/android.support.design.widget.TextInputLayout&gt;</span><br><span class="line">        &lt;/LinearLayout&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        &lt;RelativeLayout</span><br><span class="line">            android:layout_width=&quot;match_parent&quot;</span><br><span class="line">            android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">            android:layout_marginHorizontal=&quot;16dp&quot;</span><br><span class="line">            android:layout_marginVertical=&quot;8dp&quot;&gt;</span><br><span class="line"></span><br><span class="line">            &lt;TextView</span><br><span class="line">                android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">                android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">                android:layout_alignParentLeft=&quot;true&quot;</span><br><span class="line">                android:text=&quot;@string/word_list&quot;</span><br><span class="line">                android:textAppearance=&quot;@style/TextAppearance.AppCompat.Medium&quot;</span><br><span class="line">                android:textColor=&quot;#000&quot; /&gt;</span><br><span class="line"></span><br><span class="line">            &lt;Button</span><br><span class="line">                android:id=&quot;@+id/translate_btn&quot;</span><br><span class="line">                android:layout_width=&quot;24dp&quot;</span><br><span class="line">                android:layout_height=&quot;24dp&quot;</span><br><span class="line"></span><br><span class="line">                android:layout_alignParentRight=&quot;true&quot;</span><br><span class="line">                android:layout_marginRight=&quot;0dp&quot;</span><br><span class="line"></span><br><span class="line">                android:background=&quot;@drawable/ic_g_translate_black_24dp&quot;</span><br><span class="line">                android:focusable=&quot;false&quot;</span><br><span class="line">                android:onClick=&quot;TranslateClick&quot;</span><br><span class="line">                android:padding=&quot;12dp&quot; /&gt;</span><br><span class="line"></span><br><span class="line">        &lt;/RelativeLayout&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;/LinearLayout&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>将之前的Recyclerview使用SwipRecyclerView替换如下，抠出来headerView然后修改之前的布局为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line">    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;</span><br><span class="line">    xmlns:tools=&quot;http://schemas.android.com/tools&quot;</span><br><span class="line">    android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    android:layout_height=&quot;match_parent&quot;</span><br><span class="line">    android:orientation=&quot;vertical&quot;</span><br><span class="line">    tools:context=&quot;.activity.EditBookActivity&quot;&gt;</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line">    &lt;com.yanzhenjie.recyclerview.SwipeRecyclerView</span><br><span class="line">        android:id=&quot;@+id/edit_book_recyclerView&quot;</span><br><span class="line">        android:layout_width=&quot;match_parent&quot;</span><br><span class="line">        android:layout_height=&quot;wrap_content&quot; /&gt;</span><br><span class="line"></span><br><span class="line">&lt;/LinearLayout&gt;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><p>实现<br>这样一来看起来简洁了许多接下来就是代码实现。注意使用的控件为SwipRecyclerView（和RecyclerView是父子类关系）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">//其他初始化操作获取控件等</span><br><span class="line"> .</span><br><span class="line"> .</span><br><span class="line">   recyclerView.setLayoutManager(new LinearLayoutManager(this));</span><br><span class="line">   adapter = new EditBookWordsAdapter(this, wordsInfoList);</span><br><span class="line">   recyclerView.setAdapter(adapter);</span><br><span class="line"></span><br><span class="line">   //将上部分布局改为headrview</span><br><span class="line">   View headerView=getLayoutInflater().inflate(R.layout.edit_word_headerview,recyclerView,false);</span><br><span class="line">   //获取到headerview中的子控件</span><br><span class="line">   nEditText=headerView.findViewById(R.id.book_name_edit);</span><br><span class="line">   iEditText=headerView.findViewById(R.id.book_introduction_edit);</span><br><span class="line">   translate_btn=headerView.findViewById(R.id.translate_btn);</span><br><span class="line">   //获取到控件添加自己其他操作</span><br><span class="line">   nEditText.setText(book.getName());</span><br><span class="line">   iEditText.setText(book.getIntroduction());</span><br><span class="line">  //最后使用addHeaderView添加到Recyclerview</span><br><span class="line">   recyclerView.addHeaderView(headerView);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>特别注意，添加一个HeaderView，凡是通过ViewHolder拿到的position都要减去添加的HeaderView 的数量才能正确获取到position，这在原文档也强调了。<br>另外也提供了其他的一些方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">addHeaderView(View); // 添加HeaderView。</span><br><span class="line">removeHeaderView(View); // 移除HeaderView。</span><br><span class="line">addFooterView(View); // 添加FooterView。</span><br><span class="line">removeFooterView(View); // 移除FooterView。</span><br><span class="line">getHeaderItemCount(); // 获取HeaderView个数。</span><br><span class="line">getFooterItemCount(); // 获取FooterView个数。</span><br><span class="line">getItemViewType(int); // 获取Item的ViewType，包括HeaderView、FooterView、普通ItemView。</span><br><span class="line">//添加/移除HeaderView/FooterView和setAdapter()的调用不分先后顺序。</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/性能优化/" rel="tag"># 性能优化</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/07/虚拟现实心得/" rel="next" title="虚拟现实心得">
+                <i class="fa fa-chevron-left"></i> 虚拟现实心得
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/xiaoren.jpg" alt="Jeremy.Ji">
+            
+              <p class="site-author-name" itemprop="name">Jeremy.Ji</p>
+              <p class="site-description motion-element" itemprop="description">Search for the real things in the world</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/bjdlbg" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Recommend
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://material.io/develop/android/" title="Material Design" target="_blank">Material Design</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.iconfont.cn/" title="阿里矢量图标库" target="_blank">阿里矢量图标库</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://developer.android.com/" title="Android Developer" target="_blank">Android Developer</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://stackoverflow.com/" title="stackoverflow" target="_blank">stackoverflow</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#先上布局图片："><span class="nav-number">1.</span> <span class="nav-text">先上布局图片：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#布局代码"><span class="nav-number">2.</span> <span class="nav-text">布局代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#之前的解决方案"><span class="nav-number">3.</span> <span class="nav-text">之前的解决方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#我的解决方案"><span class="nav-number">4.</span> <span class="nav-text">我的解决方案</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jeremy.Ji</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">21.5k</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
