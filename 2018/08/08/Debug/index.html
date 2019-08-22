@@ -108,7 +108,9 @@
 <meta property="og:description" content="手机桌面卸载应用as再次安装失败问题   描述：使用华为手机卸载应用后（从手机中卸载），然后再次从Android studio中点击run安装app显示安装失败，详情：Error: Activity class {com.luckyxmobile.crosswords/com.luckyxmobile.crosswords.activity.MainActivity} does not exis">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006aaIyily1g5yk862qcpj30bh01sweb.jpg">
-<meta property="og:updated_time" content="2019-08-13T17:26:16.031Z">
+<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/006aaIyily1g68wm40u4zj30ik0b475u.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006aaIyily1g68wi7mn6bj30je038wec.jpg">
+<meta property="og:updated_time" content="2019-08-22T16:23:45.261Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Debug记录">
 <meta name="twitter:description" content="手机桌面卸载应用as再次安装失败问题   描述：使用华为手机卸载应用后（从手机中卸载），然后再次从Android studio中点击run安装app显示安装失败，详情：Error: Activity class {com.luckyxmobile.crosswords/com.luckyxmobile.crosswords.activity.MainActivity} does not exis">
@@ -370,7 +372,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  120
+                  307
                 </span>
               
 
@@ -418,7 +420,8 @@
 <li>APK的反编译命令记录</li>
 </ol>
 <ul>
-<li>描述：使用jd-gui和</li>
+<li>描述：使用jd-gui和dex2jar对app总classes.dex反编译<br>首先我们是想要查看一个app中的代码或者其他内容我们才会选择去反编译APK，首先我们需要获取到APK文件</li>
+<li>解决方法：<br><img src="http://ww1.sinaimg.cn/mw690/006aaIyily1g68wm40u4zj30ik0b475u.jpg" alt="as中自带分析工具"><br>Android Studio中的该栏目选项总有可以查看APK结构的工具（感觉相当于直接解压APK），可以轻松查看XML文件比如布局还有其他的AndroidManifest.xml等，但是无法查看java文件，就算打卡也是乱码。这就需要对class文件进行反编译。<br>首先需要下载Apktool并安装，此外需要一个dex2jar（我们需要记得该包的位置），最后需要JD-GUI这个是用来查看反编译后的java代码。<br>使用如下命令<br><img src="http://ww1.sinaimg.cn/large/006aaIyily1g68wi7mn6bj30je038wec.jpg" alt="cmd命令"></li>
 </ul>
 
       
@@ -650,7 +653,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">21.6k</span>
+    <span title="Site words total count">21.8k</span>
   
 </div>
 
