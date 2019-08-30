@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script>
+    (function () {
+        if ('') {
+            if (prompt('请输入文章密码') !== '') {
+                alert('密码错误！');
+                if (history.length === 1) {
+                    location.replace("http://bjdlbg.github.io"); // 这里替换成你的首页
+                } else {
+                    history.back();
+                }
+            }
+        }
+    })();
+</script>
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="网络,信息安全,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="第一章ppt——信息安全基础 1. 概念：包括 信息交换安全 和 网络系统安全 两类技术/（动态安全和静态安全） 2. 涉及信息的：机密性、完整性、真实性、不可否认性、可用性等相关理论和技术。 3. 目的：维护网络空间信息交互的秩序和规则，防止对网络系统和信息的窃听、篡改、假冒、破坏、泄露、和滥用等行为，保护合法用户的利益和隐私。 4. 信息安全是任何国家、政府、部门、行业都必须重视和面对的问题，">
+<meta name="keywords" content="网络,信息安全">
+<meta property="og:type" content="article">
+<meta property="og:title" content="信安期末复习">
+<meta property="og:url" content="http://yoursite.com/2019/06/30/信安复习/index.html">
+<meta property="og:site_name" content="忘我">
+<meta property="og:description" content="第一章ppt——信息安全基础 1. 概念：包括 信息交换安全 和 网络系统安全 两类技术/（动态安全和静态安全） 2. 涉及信息的：机密性、完整性、真实性、不可否认性、可用性等相关理论和技术。 3. 目的：维护网络空间信息交互的秩序和规则，防止对网络系统和信息的窃听、篡改、假冒、破坏、泄露、和滥用等行为，保护合法用户的利益和隐私。 4. 信息安全是任何国家、政府、部门、行业都必须重视和面对的问题，">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-08-30T13:01:50.326Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="信安期末复习">
+<meta name="twitter:description" content="第一章ppt——信息安全基础 1. 概念：包括 信息交换安全 和 网络系统安全 两类技术/（动态安全和静态安全） 2. 涉及信息的：机密性、完整性、真实性、不可否认性、可用性等相关理论和技术。 3. 目的：维护网络空间信息交互的秩序和规则，防止对网络系统和信息的窃听、篡改、假冒、破坏、泄露、和滥用等行为，保护合法用户的利益和隐私。 4. 信息安全是任何国家、政府、部门、行业都必须重视和面对的问题，">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/06/30/信安复习/">
+
+
+
+
+
+  <title>信安期末复习 | 忘我</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">忘我</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不在梅边在柳边，忘了时间忘了我。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/30/信安复习/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jeremy.Ji">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/xiaoren.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="忘我">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">信安期末复习</h1>
+        
+
+        <div class="post-meta">
+          
+
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-30T14:09:57+08:00">
+                2019-06-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  4k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  13
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>第一章ppt——信息安全基础</p>
+<pre><code>1. 概念：包括 信息交换安全 和 网络系统安全 两类技术/（动态安全和静态安全）
+2. 涉及信息的：机密性、完整性、真实性、不可否认性、可用性等相关理论和技术。
+3. 目的：维护网络空间信息交互的秩序和规则，防止对网络系统和信息的窃听、篡改、假冒、破坏、泄露、和滥用等行为，保护合法用户的利益和隐私。
+4. 信息安全是任何国家、政府、部门、行业都必须重视和面对的问题，是国家安全战略的重要组成部分，是我们每一个人，尤其是信息行业工作者的首要任务之一。
+</code></pre><p>政策和法律<br>    • 2014年2月中央网络安全和信息化领导小组成立。没有网络完全就没有国家安全，没有信息化就没有现代化。<br>    • 2015年6月，第十二届全国人大常委会第十五次回忆初次审议了《中华人民共和国网络安全法（草案）》，并向社会公开征求意见，征求意见截止日期为：2015年8月5日。<br>    • 《中华人民共和国网络安全方》是为了保障网络安全，维护网络空间主权和国家安全、社会公共利益，保护人民，法人和其他组织的合法权益，促进经济社会信息化健康发展制定。由全国人民代表大会常务委员会于2016年11月7日发布，自2017年6月1日起执行。<br>    • 中华人民共和国网络安全法（共七章七十九条）<br>        ○ 第一章 总则<br>        ○ 第二章 网络安全支持与促进<br>        ○ 第三章 网络运行安全<br>            § 第一节 一般规定<br>            § 第二节 关键信息基础设施的运行安全<br>        ○ 第四章 网络信息安全<br>        ○ 第五章 监测预警与应急处置<br>        ○ 第六章 法律责任<br>        ○ 第七章 附则</p>
+<p>信息安全主要内容<br>    Ø 密码学：信息安全的基础<br>    Ø 安全协议：信息交换安全的核心<br>    Ø 系统防护：访问控制、防火墙<br>    Ø 网络检测：入侵检测、漏洞扫描<br>    Ø 安全管理：风险、需求、策略、评估、标准、模型<br>    Ø 系统容灾：备份、容错<br>    Ø 网络攻击：主动攻击、被动攻击、APT高级持续性威胁<br>    Ø 可信计算：平台、软件、认证<br>    Ø 隐私保护：法律、匿名认证技术<br>    Ø 内容安全：数字权限管理（DRM）、水印</p>
+<p>第2章——密码学技术</p>
+<p>密码学概念：以研究密码通信为目的，是实现信息交换的基础，通过数据加密、数字签名、消息摘要、密钥交换等技术，提供了传输信息机密性、完整性、可认证性和不可否认性的实现机制，保证了网络信息的秘密安全交换，防止攻击者对信息的窃取篡改假冒和破坏。</p>
+<p>数据加密相关如下<br>    • 古典密码学：以人工计算为基础，以算法为核心。<br>        ○ 编码方法主要两种——置换（字母不变位置变，顺序变）和代换（明文字符替换成其他字符）。<br>    • 现代密码学：以计算机的计算能力为基础，复杂度有质变，以密钥为核心。1970s以来，DES、RSA为代表的算法。<br>    • 加密（encryption）：对原始的数据进行数学变换（加密前后明文plaintext变密文ciphertext）。合法接受者通过解密（decryption）获得原始数据。<br>        ○ 加密算法：M‘=E（M，k）<br>        ○ 解密算法：M=D（M’，k‘）</p>
+<pre><code>• 根据加密密钥和解密密钥是否相同，即：k ?=k’可将加密算法分为对称加密算法和非对称加密算法。
+    ○ 对称加密算法（私钥算法，单钥算法）k ?=k’。加密强度较高，加密解密运算速度较快，但密钥必须安全地创建、共享和保持，密钥管理成为影响通信安全的关键。
+    常用的有数据加密标准DES、高级加密标准AES、国际数据加密算法IDEA等。
+        DES/DEA（Data Encryption Standard/Algorithm），算法入口参数：key（7个字节密钥56为参与运算8的倍数位都是校验位，是每个密钥都有奇数个1），Data（明文64位只有），Mode（工作模式加密or解密）。使用了分组密码设计的两个原则：混淆（confusion）和扩散（diffusion）
+        3DES（Triple DES）是DES向AES的过渡算法，使用两个56位密钥对数据进行三重DES运算，更安全。加密过程：加密-解密-加密，C=Ek3（Dk2（Ek1（p）））。解密过程：解密-加密-解密，P=Dk1（Ek2（Dk3（C）））
+    ○ 非对称加密算法（公钥算法，双钥算法）
+    向对方发送需要使用对方的公钥进行加密，对方收到后使用自己的密钥解密。和对称的相比：非对称加密算法具有密钥分配简单（公钥可公开散发）、密钥保存量小（n个人互相通信，对称密码算法需要n（n-1）/2个密钥，二非对称的只需要n个公si私钥对）、可以实现数字签名等优点，但是其加密解密运算速度很慢，因此往往用于认证和建立初始通讯的回话密钥
+        RSA加密算法，对大整数因数分解，分解越困难，RSA越可靠，越长越好。
+        ElGamal算法，既能数据加密，也能数字签名。
+        椭圆曲线算法
+        单向散列函数（hash函数）
+        数字签名，验证网络传输信息真实性
+
+        公钥基础设施PKI：安全平台（包括：认证中心 、注册机构、资料库、密钥管理、证书撤销列表CRL等组件，涉及认证中心，认证申请者和验证者三类实体，数字证书是PKI的基本要素，认证中心CA是PKI的核心）PKI证书采用x.509标准。该体系中，任何通讯实体想要成为安全通信中的合法角色，首先需要向CA提出申请，经过CA验证后，获得CA颁发的证书和一个公私钥对，拥有者可在有效期内向CA申请撤销，被撤销的加入CRL（证书撤销表），CEL通过证书发布系统公开发布。
+        密钥管理：IKE，Diffie-Hellman，ISAKMP。
+        密码分析：又称为密码破译技术，对于验证加密算法的安全性、提高密码系统的设计质量有着重要意义。（具有正反两面）。主要方法有惟密文攻击（穷举）、已知明文攻击、选择明文攻击（差分分析）、选择密文攻击、选择文本攻击
+</code></pre><p>第三章课件——安全协议<br>安全协议是信息交换安全的核心（不同层次、不同应用。各宗密码学技术结合体）<br>按网络体系结构层次划分：<br>    链路层：局域网安全协议IEEE802.10、虚拟局域网VLAN协议IEEE802.1Q、点对点隧道协议PPTP、L2TP等<br>    网络层：IP安全协议IPsec<br>    传输层：安全套接层协议SSL<br>    应用层：安全电子邮件协议PGP、PEM、S-MIME，安全超文本传输协议S-HTTP、安全电子交易协议SET、安全电子付费协议SEPP等。</p>
+<p>Ipsec两个安全目标：<br>    保护ip数据包的内容<br>    通过数据包筛选和受信任通信来抵御网络攻击<br>IPsec中（AH，ESP封装安全负载协议，安全联盟SA，密钥管理协议）<br>IPsec两种封装模式（隧道模式，传输模式） </p>
+<p>SET安全协议（基于RSA）</p>
+<p>第四章——网络系统防护技术<br>访问控制权<br>    访问控制授权是网络系统的基本安全机制，用于控制用户对网络系统和资源的访问，防止未经授权的非法用户登录网络系统，违规访问网络资源。（包括用户身份验证，用户权限控制）以达到防止未经许可的用户非法进入网络，和防止用户访问未经授权的网络资源。<br>        口令权限系统<br>            口令攻击，攻击者使用合法账号为了登录到目标主机进而实施攻击。攻击者利用网络之间的信任关系获得对其他主机的访问权和控制权，进而攻击控制整个系统（寻找系统无口令账号，字典攻击弱口令，利用找回口令漏洞获取口令，破解加密的口令文件，网络监听，木马等）<br>            web服务器的口令系统：<br>                加密口令，用户键入账号和口令后，浏览器客户端程序对用户输入的字符和一个服务器产生的随机数进行哈希运算，在将账号和加密口令传送给服务器。<br>                口令认证，服务器收到账号和加密口令之后，根据账号从用户数据库取出来对应口令按照同样方法计算哈希值比较。<br>            安全口令：<br>                原则：口令时限抵御破解时间。<br>                一次性口令：<br>                    挑战应答：服务器发送随机数，用户计算密钥固定口令与随机数的哈希值应答，服务器计算验证。<br>                    时间同步：将当前时间作为计算哈希值的随机数。<br>                    口令纸：合法口令列表<br>                硬件口令：U盾<br>        权限管理基础设施PMI：privilege management infrastructure，X.509 v4提出用来管理用户对权限属性，支持访问控制授权。之前的PKI体系通过身份证书实现了对认证书持有者的身份认证，但网络服务中的访问授权以来两者。PMI使用属性证书来实现用户身份与权限属性的绑定，第三方属性权威机构（Attribute Authority，AA）负责属性证书的申请、签发、维护和撤销，管理属性证书整个生命周期。</p>
+<pre><code>    holder字段为证书拥有者标识，可选用三种不同语法选项之一。baseCertificateID issuerserial发布者和序列号，entityName generalname实体或者角色名，objectDigestInfo objectDigestInfo认证证书拥有者的信息。
+防火墙：防火墙是在被保护的内部网络与Internet外部网络之间限制访问的安全网关。所有内部网与外部网之间的通信都必须经过防火墙，并再次进行检查和连接，只有被授权的合法通信才能通过，从而实现被保护内部网络与外部网络之间的逻辑隔离，防止非法入侵，执行安全管理策略，记录所有可疑事件。从技术上来看，可以分为（包过滤防火墙、应用网关防火墙、代理服务防火墙、状态检测防火墙等）
+</code></pre><p>第五章ppt<br>网络监测技术：<br>    安全漏洞扫描技术：<br>        （静态），对于一个网络系统进行安全检查，寻找和发现可能被攻击者利用来攻击的网络安全漏洞，一旦发现，应及时采取措施加以阻塞，（更新系统版本、安装补丁程序、调整安全配置、增加安全措施等），借助安全漏洞扫描软件，该软件方法库需要提供各种已知漏洞测试方法，并且能将最新发现的安全漏洞以及测试方法添加进来。<br>    入侵检测技术：<br>        （动态），用于在网络系统运行过程中，识别和发现入侵者的攻击行为和踪迹。一旦发现攻击现象，应即刻作出适当反应。对于正在进行的网络攻击，应立即发出警报信息或采取措施阻断攻击：对于已发生的攻击，则通过分析日志记录找到发生攻击的原因和入侵者的踪迹，作为增强网络系统安全性和追究入侵者法律责任的依据。（分为两类异常检测，误用检测）。<br>安全管理：<br>    安全风险：<br>    安全需求：<br>    安全策略：<br>    安全评估：<br>    安全管理标准：信息安全管理标准BS7799（ISO/IEC19799）<br>系统容灾：<br>    数据备份：数据备份是保护数据、恢复系统的重要手段。当发生网络攻击、病毒感染、磁盘失效、供电中断以及其他系统故障而引起的数据丢失或者损坏时，可以利用数据备份来恢复系统，将系统损失减少到最低程度，避免因书永久性丢失而造成灾难性后果。一般系统都会提供数据备份和恢复工具，用户可根据所制定的数据备份策略定期将数据备份到合适存储介质上（备份效率和备份周期）<br>    系统容错：系统某一设备或者某一部分发生故障时候仍能不停机的继续工作和运行。<br>网络攻击：<br>    主动攻击：截获、窃取、假冒、重放、否认、篡改。<br>        拒绝服务攻击：DOS与DDOS<br>        漏洞扫描与渗透：ODay漏洞<br>        密码分析：穷举、猜测、差分、线性、统计分析<br>        社会工程学<br>        病毒：传播-感染性、隐蔽-潜伏性、可激发性、破坏性<br>        木马：通过特定程序（木马程序）来控制另一台主机<br>    被动攻击：窃听、流量分析<br>    高级持续性威胁（Advanced Persistent Threat，APT）：组织行为，<br>        分析业务流程，挖掘漏洞</p>
+<p>第六章——可信计算<br>可信计算：Trusted Computing，TC 指在计算和网络通信系统中广泛使用的、基于硬件安全模块支持下的可信计算平台，以提高系统整体的安全性。<br>可信计算组织：Trusted Computing Group，TCG 1999年Intel、IBM、Microsoft、hp等发起成立可信计算平台联盟TCPA，2003更名为TCG，制定了基于可信平台模块TMP的硬件级可信计算平台安全架构标准。<br>    可信计算平台：Trusted Computing Platform，TCP，可信计算平台是一个可以被本地使用者和远程实体信任的平台，其行为总是以期望的方式和意图发生，并且是可控的。将BIOS引导模块作为完整测量的信任根，TPM作为完整性报告的信任根，通过对BIOS、操作系统完整性测量来保证计算环境的可信性。<br>    可信计算关键技术要素：签注密钥、安全输入输出、存储器屏蔽、密封存储、远程认证。他们是一个完整可信系统所必须的技术要素，这个系统遵从TCG规范。<br>        签注密钥：一个2048位的RSA公私钥对，它在TMP芯片出厂随机生成且不能改变。永远在芯片里公钥用来认证及加密发送到芯片的敏感数据。<br>        安全输入输出：指用户和与之交互的软件间受保护的路径。<br>        存储器屏蔽：拓展增强的存储保护技术，提供了完全独立的存储区域。<br>        密封存储：通过把私有信息和所使用的硬软件平台配置信息捆绑在一起来保护私有信息。意味着该数据只能在相同配置下读取。<br>        远程认证：准许可信平台用户上的改变被授权方感知。<br>    可信认证：（Privacy CA方案，直接匿名证言DAA方案）TCP之间的可信认证看不懂<br>    可信计算的发展：信息安全具有四个侧面（设备安全、数据安全、内容安全与行为安全）<br>    可信计算的争论：</p>
+<p>第七章——匿名认证技术、数字水印</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/网络/" rel="tag"># 网络</a>
+          
+            <a href="/tags/信息安全/" rel="tag"># 信息安全</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/07/虚拟现实心得/" rel="next" title="虚拟现实心得">
+                <i class="fa fa-chevron-left"></i> 虚拟现实心得
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/17/SwipRecyclerView/" rel="prev" title="SwipRecyclerView解决NestScorllingView滑动卡顿">
+                SwipRecyclerView解决NestScorllingView滑动卡顿 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/xiaoren.jpg" alt="Jeremy.Ji">
+            
+              <p class="site-author-name" itemprop="name">Jeremy.Ji</p>
+              <p class="site-description motion-element" itemprop="description">Search for the real things in the world</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/bjdlbg" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Recommend
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://material.io/develop/android/" title="Material Design" target="_blank">Material Design</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.iconfont.cn/" title="阿里矢量图标库" target="_blank">阿里矢量图标库</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://developer.android.com/" title="Android Developer" target="_blank">Android Developer</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://stackoverflow.com/" title="stackoverflow" target="_blank">stackoverflow</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jeremy.Ji</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">25.9k</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
